@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "WebAPI",
+		"_postman_id": "af959a44-052d-df34-3cfd-84a0e915c3e6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3447/Products",
+			"request": {
+				"url": "http://localhost:3447/Products",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n         Name: \"testeXPTO 2\",\r\n         Price: 1.50,\r\n\t\t Category: \"categoria nova\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3447/Products(4)",
+			"request": {
+				"url": "http://localhost:3447/Products(4)",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n         Name: \"testeXPTO 2\",\r\n         Price: 1.50,\r\n\t\t Category: \"categoria nova\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3447/Products?$filter=Category eq 'categoria nova'",
+			"request": {
+				"url": "http://localhost:3447/Products?$filter=Category eq 'categoria nova'",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n         Name: \"testeXPTO 2\",\r\n         Price: 1.50,\r\n\t\t Category: \"categoria nova\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3447/Products?$count",
+			"request": {
+				"url": "http://localhost:3447/Products?$count",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n         Name: \"testeXPTO 2\",\r\n         Price: 1.50,\r\n\t\t Category: \"categoria nova\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3447/Products?$orderby=Price",
+			"request": {
+				"url": "http://localhost:3447/Products?$orderby=Price",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n         Name: \"testeXPTO 2\",\r\n         Price: 1.50,\r\n\t\t Category: \"categoria nova\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

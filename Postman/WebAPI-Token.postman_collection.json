@@ -1,0 +1,105 @@
+{
+	"variables": [],
+	"info": {
+		"name": "WebAPI-Token",
+		"_postman_id": "c728f3f1-2912-13f5-8f07-b172176cb961",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:10231/api/Account/Register",
+			"request": {
+				"url": "http://localhost:10231/api/Account/Register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Email\":\"fernando@consinco.com.br\",\n\"Password\":\"123456Test&\",\n\"ConfirmPassword\":\"123456Test&\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:10231/TOKEN",
+			"request": {
+				"url": "http://localhost:10231/Token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "fernando@consinco.com.br",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456Test&",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:10231 GET",
+			"request": {
+				"url": "http://localhost:10231/api/EmployeeAPI",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer NbVlF29_qdtOUu_Gqp7UGqRGmgYm8NR_9WU0g6b8oVj_-JXg8q8QWkAuKJkh-iIoMVq-6Ya005OMhBX7XkI0VHXK7xGTTasJJcpb1I1rWYLhDupNIczXfceho-E1DuciOHUrpFl-gJJvJ5_7NPWYrySrpvGBblcBWI9Svse44P-40ULAlhgpRlxm_KHeckboZFekmPCiZRx82Uq-ly5ZBASKPVTe4I8CdP7weAPkGNCGc_onwbEJ_PEFXEdU_kUjayjZD8UTMojHWQ1J2sfFTrEEeawVWxWTXwJXeYGz9DpusO4cs16QiRhN09Cj4iG7urxjfMaLO6XCOAcJyiQdb4hLKqxaGEOtg_UHD7sqd_ailG-dzJsc88B7qaBXKQ-cvbgl3gWNn2NiyUpl7klJ69bhqvRov32O_Cl_nKkO-x4VBUsjxb1z9MqY6N8mmUfG4DGZRdqwZdU4iKswF3nRBKQcNcVIupb2sNnf7ZTc1JlkwtjMEURGoia2k-QbQh38",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:1023/UserInfo",
+			"request": {
+				"url": "http://localhost:1023/api/Account/Logout",
+				"method": "POST",
+				"header": [
+					{
+						"key": "//Authorization",
+						"value": "Bearer Lh_tyvkZm7rALKjHQ63oBdB3S5CRUTbmgN1CYDfsALWOJ2JckH2SaMtr1UTETmYoehPoXzwu-KPez3Bvg5O8Q9AZ-V99IXBX2uTR3xqJKtzUDmML8ICTj4QYnXiyTLdIYagYz1ulFgtE1rMtillgbdoZWdEE_LBhqLSXdRLcUJIDAc60a86znx3YgH6rZkB5B2FuW7HlbA9F5JWa6BIGjoeJLi_yYQHFeC_RDFATDyQr85enwSpMSoYVdzH04PhfTTkoW8Lc_CPyZasztY2bxhxUORl6pVd7QxykXsUc8RwwXvnB9YyNpgp_CpMQjD_QVytHnnqqhdfSIaAnrZjbynEyHTtdTNzIg75fsBWUevA4Zhw8Ri2ZjxmyTsl3AdigFP9ZPAXCRUM39GdFpEU9kIKw5fgGbphRZweAWc2bortFVTHuYP7o0CbUg_SdJX8ZDbdUQOI55C0joH4hukBF-8BrSImaSZ8BeFzt0HtE2LoBXBf2oiadskOn5_7kU8pA",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
