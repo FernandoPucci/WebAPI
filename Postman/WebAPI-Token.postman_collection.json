@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"Email\":\"fernando@consinco.com.br\",\n\"Password\":\"123456Test&\",\n\"ConfirmPassword\":\"123456Test&\"\n}"
+					"raw": "{\n\"Email\":\"danilo.silva@consinco.com.br\",\n\"Password\":\"123456Test&\",\n\"ConfirmPassword\":\"123456Test&\"\n}"
 				},
 				"description": ""
 			},
@@ -44,7 +44,7 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "fernando@consinco.com.br",
+							"value": "danilo.silva@consinco.com.br",
 							"type": "text",
 							"enabled": true
 						},
@@ -74,7 +74,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer NbVlF29_qdtOUu_Gqp7UGqRGmgYm8NR_9WU0g6b8oVj_-JXg8q8QWkAuKJkh-iIoMVq-6Ya005OMhBX7XkI0VHXK7xGTTasJJcpb1I1rWYLhDupNIczXfceho-E1DuciOHUrpFl-gJJvJ5_7NPWYrySrpvGBblcBWI9Svse44P-40ULAlhgpRlxm_KHeckboZFekmPCiZRx82Uq-ly5ZBASKPVTe4I8CdP7weAPkGNCGc_onwbEJ_PEFXEdU_kUjayjZD8UTMojHWQ1J2sfFTrEEeawVWxWTXwJXeYGz9DpusO4cs16QiRhN09Cj4iG7urxjfMaLO6XCOAcJyiQdb4hLKqxaGEOtg_UHD7sqd_ailG-dzJsc88B7qaBXKQ-cvbgl3gWNn2NiyUpl7klJ69bhqvRov32O_Cl_nKkO-x4VBUsjxb1z9MqY6N8mmUfG4DGZRdqwZdU4iKswF3nRBKQcNcVIupb2sNnf7ZTc1JlkwtjMEURGoia2k-QbQh38",
+						"value": "Bearer 4uu7_XT0ypAmQr0C2B6txETs7n-VrsIGzbpByqYO5DPb98rJilwV8Y20z-VHgb75-JnqXk6Cq9IhE55uqBuMJW7GNYm2pE39asIJ6ryC9M47Jp4tW9nmsPAYiQzeCpBDUTB-VQm4s5KqjaLrHtlaLAeOcelpQh4T3CilfOy5ZC3nI6wNIMkZS6JN_fSkvjRwtYGYCQK6NLF3rZBwXEiaVIOpwL-IQSRWZn4Tzz2agQmVEHnUfs_yRoKKCX_Y86F5T-achaMarsBioX0-FXjg33wMsmMQcIDy0BOSlMjZscLibjClLsSwOMHLGB4za9r0k6-BhppgSN6Myp1Jwcbn4Zp4qrLM14G-GVw1t7PoUiXwudLtwDitNW5qigAnFubVYKG8_j1n6F4M5dFnZRfPyDhplDPu729ZAmxZtl3_174lzC_UBm61UoguRyfwG9gra4LhJ__EcKdZ7WkqtPvuFL9wOlJvfL1h5ph_3cw7pB9OUVK1i-kNQb5YofgYASxm",
 						"description": ""
 					}
 				],
@@ -86,17 +86,110 @@
 		{
 			"name": "http://localhost:1023/UserInfo",
 			"request": {
-				"url": "http://localhost:1023/api/Account/Logout",
+				"url": "http://localhost:10231/api/Account/UserInfo",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer P6MYvYKesgrGug9FC7Wey4ij6uIApzyNFBe-4hc1khWU95EvWhUfDOFbR6IxvC9lfDk9JikCMriTOR4iWn4RmwCqgJOzXKw-Jipa5AztvwFcK7Z20q2izw7JF_kI5mOwjcsX5MExxDpd-PjH0SbIni59Kftbs32fdwvqfjqsW2m37Ejo0WEymU8Mlomm4gDaRdm9_xF2pMTXQJxfaIKTfyVvTncChbxRsVSff0OrPU598FnFUFbUNa56pN0IagQ822anwDelvke_rybi9gpUcFIdO_ENavSni3NtvCzAkPBhAi6k8kA3UgZcPo0HjzdPxILvhCCFR4Wy2CfT4Ar4CBr_waY7gKG3KD29QMSUkS7GIbFTk0aN_P0AtV3VXzbwEpuxBmJ5RScfobg8WTmn0HlYQvJTvNCAfUWmrqTBtgarYGJGCzp4v7AOKSsFNzEvaent_BjtwVrAd12GvvbwBRGQ8k05mqup1SM2xBrpCYx4OLvEZ-bzI2O2HJwmKut_",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "danilo.silva@consinco.com.br",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456Test&",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:10231/api/Account/Logout",
+			"request": {
+				"url": "http://localhost:10231/api/Account/Logout",
 				"method": "POST",
 				"header": [
 					{
-						"key": "//Authorization",
-						"value": "Bearer Lh_tyvkZm7rALKjHQ63oBdB3S5CRUTbmgN1CYDfsALWOJ2JckH2SaMtr1UTETmYoehPoXzwu-KPez3Bvg5O8Q9AZ-V99IXBX2uTR3xqJKtzUDmML8ICTj4QYnXiyTLdIYagYz1ulFgtE1rMtillgbdoZWdEE_LBhqLSXdRLcUJIDAc60a86znx3YgH6rZkB5B2FuW7HlbA9F5JWa6BIGjoeJLi_yYQHFeC_RDFATDyQr85enwSpMSoYVdzH04PhfTTkoW8Lc_CPyZasztY2bxhxUORl6pVd7QxykXsUc8RwwXvnB9YyNpgp_CpMQjD_QVytHnnqqhdfSIaAnrZjbynEyHTtdTNzIg75fsBWUevA4Zhw8Ri2ZjxmyTsl3AdigFP9ZPAXCRUM39GdFpEU9kIKw5fgGbphRZweAWc2bortFVTHuYP7o0CbUg_SdJX8ZDbdUQOI55C0joH4hukBF-8BrSImaSZ8BeFzt0HtE2LoBXBf2oiadskOn5_7kU8pA",
-						"description": "",
-						"disabled": true
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Authorization",
+							"value": "Bearer Lh_tyvkZm7rALKjHQ63oBdB3S5CRUTbmgN1CYDfsALWOJ2JckH2SaMtr1UTETmYoehPoXzwu-KPez3Bvg5O8Q9AZ-V99IXBX2uTR3xqJKtzUDmML8ICTj4QYnXiyTLdIYagYz1ulFgtE1rMtillgbdoZWdEE_LBhqLSXdRLcUJIDAc60a86znx3YgH6rZkB5B2FuW7HlbA9F5JWa6BIGjoeJLi_yYQHFeC_RDFATDyQr85enwSpMSoYVdzH04PhfTTkoW8Lc_CPyZasztY2bxhxUORl6pVd7QxykXsUc8RwwXvnB9YyNpgp_CpMQjD_QVytHnnqqhdfSIaAnrZjbynEyHTtdTNzIg75fsBWUevA4Zhw8Ri2ZjxmyTsl3AdigFP9ZPAXCRUM39GdFpEU9kIKw5fgGbphRZweAWc2bortFVTHuYP7o0CbUg_SdJX8ZDbdUQOI55C0joH4hukBF-8BrSImaSZ8BeFzt0HtE2LoBXBf2oiadskOn5_7kU8pA",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:10231/api/user",
+			"request": {
+				"url": "http://localhost:10231/api/user/Login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Email\":\"leticia.grotto@consinco.com.br\",\n\"Password\":\"123456Test&\",\n\"ConfirmPassword\":\"123456Test&\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:10231/api/User/Register",
+			"request": {
+				"url": "http://localhost:10231/api/User/Register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Username\":\"leticia.grotto@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+				},
 				"description": ""
 			},
 			"response": []
