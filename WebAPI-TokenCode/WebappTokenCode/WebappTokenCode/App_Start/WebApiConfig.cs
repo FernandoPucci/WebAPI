@@ -5,6 +5,9 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using System.Web.OData.Builder;
+using WebappTokenCode.Models;
+using System.Web.OData.Extensions;
 
 namespace WebappTokenCode
 {
@@ -25,6 +28,15 @@ namespace WebappTokenCode
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            ODataModelBuilder builder = new ODataConventionModelBuilder();
+            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //permissão geral de query
+            builder.EntitySet<Employee>("Employees");
+            // builder.EntityType<Product>().Filter("Category").Expand().Select().OrderBy().Expand().Count();  //permissao de query por entidade
+            config.MapODataServiceRoute(
+                routeName: "ODataRoute",
+                routePrefix: null,
+                model: builder.GetEdmModel());
         }
     }
 }

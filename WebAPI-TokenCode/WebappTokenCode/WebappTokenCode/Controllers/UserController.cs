@@ -66,8 +66,6 @@ namespace WebappTokenCode.Controllers
             {
                 return await this.BadRequest(this.ModelState).ExecuteAsync(new CancellationToken());
             }
-            
-            
 
            var user = new ApplicationUser
             {
