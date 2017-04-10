@@ -8,26 +8,6 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:10231/api/Account/Register",
-			"request": {
-				"url": "http://localhost:10231/api/Account/Register",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\"Email\":\"danilo.silva@consinco.com.br\",\n\"Password\":\"123456Test&\",\n\"ConfirmPassword\":\"123456Test&\"\n}"
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
 			"name": "http://localhost:10231/TOKEN",
 			"request": {
 				"url": "http://localhost:10231/Token",
@@ -44,7 +24,7 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "danilo.silva@consinco.com.br",
+							"value": "leticia.grotto@consinco.com.br",
 							"type": "text",
 							"enabled": true
 						},
@@ -74,7 +54,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 4uu7_XT0ypAmQr0C2B6txETs7n-VrsIGzbpByqYO5DPb98rJilwV8Y20z-VHgb75-JnqXk6Cq9IhE55uqBuMJW7GNYm2pE39asIJ6ryC9M47Jp4tW9nmsPAYiQzeCpBDUTB-VQm4s5KqjaLrHtlaLAeOcelpQh4T3CilfOy5ZC3nI6wNIMkZS6JN_fSkvjRwtYGYCQK6NLF3rZBwXEiaVIOpwL-IQSRWZn4Tzz2agQmVEHnUfs_yRoKKCX_Y86F5T-achaMarsBioX0-FXjg33wMsmMQcIDy0BOSlMjZscLibjClLsSwOMHLGB4za9r0k6-BhppgSN6Myp1Jwcbn4Zp4qrLM14G-GVw1t7PoUiXwudLtwDitNW5qigAnFubVYKG8_j1n6F4M5dFnZRfPyDhplDPu729ZAmxZtl3_174lzC_UBm61UoguRyfwG9gra4LhJ__EcKdZ7WkqtPvuFL9wOlJvfL1h5ph_3cw7pB9OUVK1i-kNQb5YofgYASxm",
+						"value": "Bearer lUbSOpIEZUKLb4CTflR3OIOuP7cNWH9XZfIS3yGsLNuW8itQSHc-Yh6r_aYrm-oo8gbzvZzx7tCrjiklj3GCCZqWXeSuU-GUiSXVekrQcE4sVbdlgoSh3Vq15qG6t7aFShzQpjQB9Zl0_m5k6s2A54ErzVbLUcoU98E77D-A063NhGb9m6MNHIiZbE5AWNk44UGxIyUuFfCJFVZ7gb_S8i__ddcCj2J9plJPiMcTPmPQRAhiGQgSNXEqV4bY_L0OqjGwxwhcUrhYiLJ5xKJiauMTC53drmljXGrYI1jYa88ax-wqzbrjQ4dZw9pT234zCSHJrDGDRUF6_sSJfwsSLVRIAhIz38SygxPJ9l8iqap99QMJccPFPlSNIGadq7C099YWVUQC8zBdXmc1I6ZCCTmvKGK_WUi_PSl_j1SVJ53Ia-BUPtrXaNWdn_I540bqlv63Apnzlnx0iSTP4voH2fU9K2r4TPbB5vb-ZCNTKBUoLnyMt-t_IeoDYY_i1Z5m",
 						"description": ""
 					}
 				],
@@ -91,7 +71,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer P6MYvYKesgrGug9FC7Wey4ij6uIApzyNFBe-4hc1khWU95EvWhUfDOFbR6IxvC9lfDk9JikCMriTOR4iWn4RmwCqgJOzXKw-Jipa5AztvwFcK7Z20q2izw7JF_kI5mOwjcsX5MExxDpd-PjH0SbIni59Kftbs32fdwvqfjqsW2m37Ejo0WEymU8Mlomm4gDaRdm9_xF2pMTXQJxfaIKTfyVvTncChbxRsVSff0OrPU598FnFUFbUNa56pN0IagQ822anwDelvke_rybi9gpUcFIdO_ENavSni3NtvCzAkPBhAi6k8kA3UgZcPo0HjzdPxILvhCCFR4Wy2CfT4Ar4CBr_waY7gKG3KD29QMSUkS7GIbFTk0aN_P0AtV3VXzbwEpuxBmJ5RScfobg8WTmn0HlYQvJTvNCAfUWmrqTBtgarYGJGCzp4v7AOKSsFNzEvaent_BjtwVrAd12GvvbwBRGQ8k05mqup1SM2xBrpCYx4OLvEZ-bzI2O2HJwmKut_",
+						"value": "Bearer Ff4OiDsbIRQQmuSYHejVnkSPf6fpokxThXx9FdXjExEeCKMziZ6H59o62uRkwZo9vF-Q5Roj1OQL0lplEweBNQHtiH948hOk6K3ucNNdfwXasdhq7wvRWc9BqiezOlIEJOZVJI7sdl0iRXGFz_oH7EzWRmLEvNgapjy30yZ660R_glVrFbIk2-gUEwT3qWyxLxGpkmr7S8DOkE4pkPKAaYMzzjHhd3aNE_Uz1NAYwi7cTkrAskeSbTB_bZKTBc1hy5aOrqizVR2kKeJCH5poM6jZmiqrM5Sd2P94uFHY3gC8DkGEOssFABI4rd4w_u7R_ezpvOhqfXd6tN5bPs09BwU37bSX0P-PKeSjC6bOKa_VilzQyTamtn6STZHYh9eSii22lbIojX6VaTyQoxl4GftH2eQ1kY4DQ6ier2Z7rQjHYU6TuC6oV_pevtBgdUecX7Cw_rIuwHly_XesMLPrU2zkB-uSX-wF_fFM1LXYMeVeKOD_8QpVE_WJ9XC_ITLu",
 						"description": ""
 					},
 					{
@@ -128,33 +108,6 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:10231/api/Account/Logout",
-			"request": {
-				"url": "http://localhost:10231/api/Account/Logout",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "Authorization",
-							"value": "Bearer Lh_tyvkZm7rALKjHQ63oBdB3S5CRUTbmgN1CYDfsALWOJ2JckH2SaMtr1UTETmYoehPoXzwu-KPez3Bvg5O8Q9AZ-V99IXBX2uTR3xqJKtzUDmML8ICTj4QYnXiyTLdIYagYz1ulFgtE1rMtillgbdoZWdEE_LBhqLSXdRLcUJIDAc60a86znx3YgH6rZkB5B2FuW7HlbA9F5JWa6BIGjoeJLi_yYQHFeC_RDFATDyQr85enwSpMSoYVdzH04PhfTTkoW8Lc_CPyZasztY2bxhxUORl6pVd7QxykXsUc8RwwXvnB9YyNpgp_CpMQjD_QVytHnnqqhdfSIaAnrZjbynEyHTtdTNzIg75fsBWUevA4Zhw8Ri2ZjxmyTsl3AdigFP9ZPAXCRUM39GdFpEU9kIKw5fgGbphRZweAWc2bortFVTHuYP7o0CbUg_SdJX8ZDbdUQOI55C0joH4hukBF-8BrSImaSZ8BeFzt0HtE2LoBXBf2oiadskOn5_7kU8pA",
-							"type": "text",
-							"enabled": true
-						}
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
 			"name": "http://localhost:10231/api/user",
 			"request": {
 				"url": "http://localhost:10231/api/user/Login",
@@ -168,7 +121,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"Email\":\"leticia.grotto@consinco.com.br\",\n\"Password\":\"123456Test&\",\n\"ConfirmPassword\":\"123456Test&\"\n}"
+					"raw": "{\n\"Email\":\"leticia.grotto@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
 				},
 				"description": ""
 			},
@@ -188,7 +141,69 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"Username\":\"leticia.grotto@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+					"raw": "{\n\"Username\":\"jose.silva@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:10231/api/User/Logout",
+			"request": {
+				"url": "http://localhost:10231/api/User/Logout",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BgYojU0d04J5YTRIsopLlhuX56LJtIt8wx1svpkjqUbhjlTL6dz3AD6ybDCLtizBi_9vd-FH-6a52ogVI7MvLOz1sDJCisBZisygd0wTyVEE3QqL21_5X98faE34Se5b9avfcWMQ4XbO7z0CpNuZTAQr9Ie7D3FIJ-A6NMtqgOcJiFLfGvLnHdu7-Y9DG_9JAUwzzZljgfuntY8zKe8KkFpA41hqS3Q9a4zG-RX-EtRLpra1I_tAUuLts86mGCrnV_Pd-4uMnK7h1s-xtkjb6Ag_rRASk6JONLQ1C8oJrwbgnSEIFD26cRPd06id_h7rsO-5nY20-WnnX3IertMQWdPe40sxfBmhssYa5gXG1m7BsG4cY0trK2IsKQYKvkIh5CTRz0ejwfxbZzZ_1yf6g_8zVkEOTobl83xnBkT4aTrgTNJzr_YOcQP_l0vja3oVsXSJSivSKkZWdSewhhjST6qtRJNhjhmbBfCCfdZgubYJ3ekajImKBwM_2-R50NS6",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST EMPLOYEES",
+			"request": {
+				"url": "http://localhost:10231/Employees",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BgYojU0d04J5YTRIsopLlhuX56LJtIt8wx1svpkjqUbhjlTL6dz3AD6ybDCLtizBi_9vd-FH-6a52ogVI7MvLOz1sDJCisBZisygd0wTyVEE3QqL21_5X98faE34Se5b9avfcWMQ4XbO7z0CpNuZTAQr9Ie7D3FIJ-A6NMtqgOcJiFLfGvLnHdu7-Y9DG_9JAUwzzZljgfuntY8zKe8KkFpA41hqS3Q9a4zG-RX-EtRLpra1I_tAUuLts86mGCrnV_Pd-4uMnK7h1s-xtkjb6Ag_rRASk6JONLQ1C8oJrwbgnSEIFD26cRPd06id_h7rsO-5nY20-WnnX3IertMQWdPe40sxfBmhssYa5gXG1m7BsG4cY0trK2IsKQYKvkIh5CTRz0ejwfxbZzZ_1yf6g_8zVkEOTobl83xnBkT4aTrgTNJzr_YOcQP_l0vja3oVsXSJSivSKkZWdSewhhjST6qtRJNhjhmbBfCCfdZgubYJ3ekajImKBwM_2-R50NS6",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"EmpNo\" = 101, \"EmpName\" = \"TS\", \"Salary\" = 12000, \"DeptName\" = \"IT\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST EMPLOYEE",
+			"request": {
+				"url": "http://localhost:10231/Employees",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eRP6vZ2CoAjcVylL2BVkcJ3krbZq7JDbRSV-4XAbGdpomSuPVXYbuvrGaNQ2exrQZ03PmVhCkXC7RXyVyZ1ym2x4sQtvS9tOHM9cwi9zbvHMgJliSAuySnuKYNY8fiOKDBOBm1dUxOd-v9f3-FObz7Ojsxgen9fJpi_4v6GNJqwk-sa73CT-YZYNU69dt9OrKtFpOUBw6UBZa9MomoqSgSK_gDGWiB20Refv-F-17XAjLOEMY4Z0HqJV5KDYk5MJZVeBmg61vLHe_P6ZVHUrVum2NclWFh5Z0gMj1CX5j7zMZDYXBH4eEA7qvs-JEvL0uC3mtOZL4-uOOlycZSWGiZNza4PScMlXjjwmzWOg0NZ_xSAmW4yMVtg902GrUFWhdKsJ0DKXag1mOZl2zAkoPs8KEmhKm1ftL14eggPBbvPvskk6rpq4tqUjgjWhKCqV6Wazmu7s-41S9m2NqnYK_CNvvJQgD8KYse6EJ0OrGt4qlR4ABgEyMQUqmlTuadX6",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"EmpName\" : \"José Silva\", \"Salary\" : 2000, \"DeptName\" : \"IT\"}\r\n"
 				},
 				"description": ""
 			},
