@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using System;
@@ -66,6 +67,7 @@ namespace WebappTokenCode.Controllers
             var user = new ApplicationUser
             {
                 UserName = model.Username,
+                Email = model.Username
                 //  Name = model.Name
             };
 
@@ -100,12 +102,12 @@ namespace WebappTokenCode.Controllers
         {
             get
             {
-                return _userManager ?? new AccountController().UserManager;
-
+                //return _userManager ?? new AccountController().UserManager;//
+                return _userManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             set
             {
-                _userManager = new AccountController().UserManager;
+                _userManager = UserManager;
             }
         }
         private IHttpActionResult GetErrorResult(IdentityResult result)

@@ -1,0 +1,33 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Diversos",
+		"_postman_id": "641244e5-e165-2f47-c6d9-1396d9718b38",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://yoda.p.mashape.com/yoda?sentence=Estamos somente testando",
+			"request": {
+				"url": "https://yoda.p.mashape.com/yoda?sentence=What i am doing now",
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Mashape-Key",
+						"value": "d1KVOmjidKmshp9Xg8zqYwWD1jfAp1MzTNyjsnXFA8RqeVV5pO",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
