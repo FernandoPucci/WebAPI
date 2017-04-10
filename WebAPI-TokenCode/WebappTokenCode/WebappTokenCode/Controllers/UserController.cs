@@ -5,8 +5,10 @@ using Microsoft.Owin.Security.Cookies;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -23,6 +25,7 @@ namespace WebappTokenCode.Controllers
     {
         private ApplicationUserManager _userManager;
 
+        #region Metodos para login e registro de usuario
         // POST api/User/Login
         [HttpPost]
         [AllowAnonymous]
@@ -63,13 +66,17 @@ namespace WebappTokenCode.Controllers
             {
                 return await this.BadRequest(this.ModelState).ExecuteAsync(new CancellationToken());
             }
+            
+            
 
-            var user = new ApplicationUser
+           var user = new ApplicationUser
             {
-                UserName = model.Username,
-                Email = model.Username
-                //  Name = model.Name
-            };
+               UserName = model.Username,
+               Email = model.Username,
+               Name = model.Username.IndexOf("@") > 0
+                ? model.Username.Substring(0, model.Username.IndexOf("@"))
+                : model.Username
+           };
 
             IdentityResult result = await this.UserManager.CreateAsync(user, model.Password);
 
@@ -82,7 +89,8 @@ namespace WebappTokenCode.Controllers
             var loginResult = this.LoginUser(new LoginUserBindingModel()
             {
                 Username = model.Username,
-                Password = model.Password
+                Password = model.Password,
+
             });
             return await loginResult;
         }
@@ -96,13 +104,14 @@ namespace WebappTokenCode.Controllers
             return this.Ok(new { message = "Logout successful." });
         }
 
-        #region Propriedades Copiadas de AccountController
+        #endregion
+
+        #region Propriedades
 
         private ApplicationUserManager UserManager
         {
             get
-            {
-                //return _userManager ?? new AccountController().UserManager;//
+            {              
                 return _userManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             set
@@ -147,6 +156,7 @@ namespace WebappTokenCode.Controllers
         #endregion
     }
 
+    #region Objetos de Login
     public class LoginUserBindingModel
     {
         [Required]
@@ -165,5 +175,9 @@ namespace WebappTokenCode.Controllers
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public string Name { get; set; }
+
     }
+    #endregion
 }
