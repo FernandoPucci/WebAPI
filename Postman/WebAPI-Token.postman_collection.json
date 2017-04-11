@@ -141,7 +141,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"Username\":\"jose.silva@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+					"raw": "{\n\"Username\":\"pedro.silva@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
 				},
 				"description": ""
 			},
@@ -212,12 +212,12 @@
 		{
 			"name": "GET LIST EMPLOYEES http://localhost:10231/v1/odata/Employees?$orderby=Salary",
 			"request": {
-				"url": "http://localhost:10231/v1/odata/Employees",
+				"url": "http://localhost:10231/v1/odata/Employees?$orderby=Salary",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer cD9cYc8Mjw-KLwqhmO0ikQbnNJvBc6COEy-7BETbyycAL4KLiz7qkfDd-VlLD78VfoblmY-GU_upoXkscFGy4QVZjpbwsTQtpt9o_BROc7KhmjDcC3ykqIvzjiEch9kcrNX-0LsuK9fTWwGXngw13P0ghcaebYVCqH9WcBt7tWpiSdbtarBRKdnr2rMuV_PPbbo9QOWZk82hronTigSvYXkXj9L4IQUd4doIOzU005HiqSEdvHczx-Iec5ahzJPGoeWOyHEZf26rhqbyXY2UvrJxObWyVgL8EWd5fMFm81LORP2hWzZYBJrj9LhYyXWXsXWlc031PJEEnXXx4_bdGVFe2KOxydP6YHB3jn_7y2HpNyeie9QS5sDJxWCrcv0-PUHw5gTUMyKMvy-gFpfh1eWkI9w_yKJGWydTISCo2G-5Ajpcn-TlCaFy3qttvXGECQ3AQxhRIBU0wl-a2Fyhanjvsdmi91uD8TI0weOhEwhMvS0GvyaA3eOb9I_F0Pum",
+						"value": "Bearer K5gZ95gDPOqjsM_nJZaZXa1wOjwdAVEMPkZUt9dPfFjWUC7diZbKWASOEkz4b85oYggWYALna8EiletH2Yl1wn0LhGJ_f4Eeg_CvRfM3_7NojLdeZDmAHfLR9LjeGldCOkCOA6IUZIGJV3Vz5YU_m_eUzdc-ZafyqKhBEwzK-zPQ30Bsq1vvXTe1XguCRUgpWx09qLV7KpP-hE0Y_EubQdjTDg-9tMac382JLbtvHOyOSXo4Yb-ZXNogAS_imvOnqxviPaasBJX5GFcERGzvL9f-jfkFeFwVVA-G61pMGluZ5VMFLMV--lAXtukZrenqG2E61G6kmgcF5Wj888heEez1fWbZWb_2IsdQtFr3Wi9ng5hBnn1hrY4fOItp9Fj7puEA3e9giXaPZVuwyC3QZCSGVjsyNb7ZqzrWhogp2CjXqmGRdih2yN9m0HLs0gn0ewjeCl38RvAuqZtRA6zGxap1zWmw0yESBaO7ahFQyK-6GAN0HnhvKBMqBjbuThL_",
 						"description": ""
 					}
 				],
@@ -244,6 +244,118 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{ \"EmpNo\" = 101, \"EmpName\" = \"TS\", \"Salary\" = 12000, \"DeptName\" = \"IT\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:12206/token",
+			"request": {
+				"url": "http://localhost:12206/token",
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "fernando.pucci@consinco.com.br",
+						"description": ""
+					},
+					{
+						"key": "password",
+						"value": "123456Test&",
+						"description": ""
+					},
+					{
+						"key": "grant_type",
+						"value": "password",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:12206/api/user/login",
+			"request": {
+				"url": "http://localhost:12206/api/user/Login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Email\":\"jose.silva@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:12206/api/user/Register",
+			"request": {
+				"url": "http://localhost:12206/api/user/Register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Username\":\"jose.silva@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:10231/TOKEN-REFRESH",
+			"request": {
+				"url": "http://localhost:10231/Token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "leticia.grotto@consinco.com.br",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456Test&",
+							"type": "text",
+							"enabled": false
+						},
+						{
+							"key": "token",
+							"value": "Bearer mxfVL-t7ek9br5LXpPg33iOxhMTwt0sdiJngHjZKP1eI3lAb8poUOJLHtVi73WlkHGZBCFQ0SIkAXQ8nvUwrezyeetWEgtEMDkAMo9-tAM2S3qLns5UPTr5G2qVYe_POg4-NC0loo64OwJzb0kdv_JcGU7aoyvCnKosrh-WVd_7RhGWBNscgi6Rd1LWPg2N_s_1to0Zy9XO6Ukks3-gKYkCbBhO25KCw5JHjNmYnWd_eL9uU2aDS5M3Eaq_egXMDDFVN708kpnfwXB1o_97bLRSeFLamJbadONKAzusz-CD-K9CluZqhrcVzSjYItO89WsgYGZbhfyJpmALQLc0iU4xknQzKMdrcHvb63w0vOx8IaSB-wMvBShwyItMw0RaawYgc4fh31YPglSnfb6Kz35UxhWZXMNiIIfrcbqGoH4N6Q-56qBESX_odS0G3wRZGw7Z5Gm7Eh3oAm0xCel3F-e39yna4skNEl9UY1Q1jeHSh4zrtch-IubvCwB7xZ1jR",
+							"type": "text",
+							"enabled": false
+						}
+					]
 				},
 				"description": ""
 			},
