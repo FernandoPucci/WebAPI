@@ -28,15 +28,15 @@ namespace WebappTokenCode
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
+            
             ODataModelBuilder builder = new ODataConventionModelBuilder();
-            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //permissão geral de query
             builder.EntitySet<Employee>("Employees");
-            // builder.EntityType<Product>().Filter("Category").Expand().Select().OrderBy().Expand().Count();  //permissao de query por entidade
+            builder.EntityType<Employee>().Filter("Salary").Filter("DeptName").Expand().Select().OrderBy().Expand().Count();  //permissao de query por entidade
             config.MapODataServiceRoute(
-                routeName: "ODataRoute",
-                routePrefix: null,
-                model: builder.GetEdmModel());
+                routeName: "ODataRoute",                
+                routePrefix: "v1/odata",
+                model: builder.GetEdmModel()
+                );
         }
     }
 }

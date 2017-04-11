@@ -155,7 +155,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BgYojU0d04J5YTRIsopLlhuX56LJtIt8wx1svpkjqUbhjlTL6dz3AD6ybDCLtizBi_9vd-FH-6a52ogVI7MvLOz1sDJCisBZisygd0wTyVEE3QqL21_5X98faE34Se5b9avfcWMQ4XbO7z0CpNuZTAQr9Ie7D3FIJ-A6NMtqgOcJiFLfGvLnHdu7-Y9DG_9JAUwzzZljgfuntY8zKe8KkFpA41hqS3Q9a4zG-RX-EtRLpra1I_tAUuLts86mGCrnV_Pd-4uMnK7h1s-xtkjb6Ag_rRASk6JONLQ1C8oJrwbgnSEIFD26cRPd06id_h7rsO-5nY20-WnnX3IertMQWdPe40sxfBmhssYa5gXG1m7BsG4cY0trK2IsKQYKvkIh5CTRz0ejwfxbZzZ_1yf6g_8zVkEOTobl83xnBkT4aTrgTNJzr_YOcQP_l0vja3oVsXSJSivSKkZWdSewhhjST6qtRJNhjhmbBfCCfdZgubYJ3ekajImKBwM_2-R50NS6",
+						"value": "Bearer bNsmxs01yIl6581WJZfM0Q0irt-pds-30bqTE1_gmex7beOmisyV3y5aej-PO9T-zWeB4b1Ha4W1rCYRHMZEHUUERm9ruQOVHx6epZUpnpBq3o6Y3UchcjwA7W3vayT4fE7dswLhFSdQJbI3PTu6KvNzwz8uMEdyOUwTAKhSvKcYFZOMOQTpEDCx4-WVkWKN0dk4_dQz_oLlXDoRs8ev00TQFrnMIaE6oqxeMHiSYdxtPNzxIgu-tztEVlg1ap5bIgQ9o6ytqqo6cn3D6r9yTKmJthumaStG-SaVnVP6xVpYMD-Ip9N1mMxv6tM_oIOEcGOoWOjNzwbWwnhTXM0xwNvZID-k5LMU6Bf4fGF_tOctMilt8FH9XTidq0JrF8YOl8DKNpXbccGU1aa9N1jHUaPpSzkTwfx76Wg-0nihw9yJCYvG6RQgpN7TyeGUDui4dWfX0Ol-G76pMWFb_mwT9hg8uXl4hDDOHgteAnTqnCAglcHFlwDbKJH1mKsfQDLM",
 						"description": ""
 					}
 				],
@@ -167,12 +167,12 @@
 		{
 			"name": "GET LIST EMPLOYEES",
 			"request": {
-				"url": "http://localhost:10231/Employees",
+				"url": "http://localhost:10231/v1/odata/Employees",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BgYojU0d04J5YTRIsopLlhuX56LJtIt8wx1svpkjqUbhjlTL6dz3AD6ybDCLtizBi_9vd-FH-6a52ogVI7MvLOz1sDJCisBZisygd0wTyVEE3QqL21_5X98faE34Se5b9avfcWMQ4XbO7z0CpNuZTAQr9Ie7D3FIJ-A6NMtqgOcJiFLfGvLnHdu7-Y9DG_9JAUwzzZljgfuntY8zKe8KkFpA41hqS3Q9a4zG-RX-EtRLpra1I_tAUuLts86mGCrnV_Pd-4uMnK7h1s-xtkjb6Ag_rRASk6JONLQ1C8oJrwbgnSEIFD26cRPd06id_h7rsO-5nY20-WnnX3IertMQWdPe40sxfBmhssYa5gXG1m7BsG4cY0trK2IsKQYKvkIh5CTRz0ejwfxbZzZ_1yf6g_8zVkEOTobl83xnBkT4aTrgTNJzr_YOcQP_l0vja3oVsXSJSivSKkZWdSewhhjST6qtRJNhjhmbBfCCfdZgubYJ3ekajImKBwM_2-R50NS6",
+						"value": "Bearer YpFQN-d9Z-rqWSl9tIELFb7tLu8EC0IPZhEW-u0CBkCCbEZewb0v3z0bBb031Ibt7FKMrtXDpEUFI_LN3IvDABUJs1aLdTcVS8fn2sYabyWMrRTjW0W-EvGhgObGGVRJ-N5I7rhb-BiNYakLxVWhMkz3j4nb1Oi35hYrqoHvN5Kp9RqixqX5xazQMh74_j30kcJsZIk2EwaXJRMdlsinjZjGgwPmf5Gyh60ycFo_v-AmFTZzg3Av1Eve6SRtIA4W3z1Z__I9woAU5R3gBXC7_0F30Rz75q3e3vLPvYjlC57Bf3_cOoTrFQu-nDANyzVq1Dgo_vmPcsgg3CZi0aIF5jIK9F135TE9YGm0akEqexjVpc9m_D7r8SGnQ7uEqQDmXJeiO4JXMtMlXRkWeeeLsxmrlx8QWqGCNkZeQPHXxlmJdR-oc8etjQ-X12tVqBtX13LHq_sbNUbq667L2vXKesZEidOVQQ0NLQTE8Peii4lcVilI-35QnbuQsV5TJfRB",
 						"description": ""
 					}
 				],
@@ -204,6 +204,46 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\"EmpName\" : \"José Silva\", \"Salary\" : 2000, \"DeptName\" : \"IT\"}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST EMPLOYEES http://localhost:10231/v1/odata/Employees?$orderby=Salary",
+			"request": {
+				"url": "http://localhost:10231/v1/odata/Employees",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer cD9cYc8Mjw-KLwqhmO0ikQbnNJvBc6COEy-7BETbyycAL4KLiz7qkfDd-VlLD78VfoblmY-GU_upoXkscFGy4QVZjpbwsTQtpt9o_BROc7KhmjDcC3ykqIvzjiEch9kcrNX-0LsuK9fTWwGXngw13P0ghcaebYVCqH9WcBt7tWpiSdbtarBRKdnr2rMuV_PPbbo9QOWZk82hronTigSvYXkXj9L4IQUd4doIOzU005HiqSEdvHczx-Iec5ahzJPGoeWOyHEZf26rhqbyXY2UvrJxObWyVgL8EWd5fMFm81LORP2hWzZYBJrj9LhYyXWXsXWlc031PJEEnXXx4_bdGVFe2KOxydP6YHB3jn_7y2HpNyeie9QS5sDJxWCrcv0-PUHw5gTUMyKMvy-gFpfh1eWkI9w_yKJGWydTISCo2G-5Ajpcn-TlCaFy3qttvXGECQ3AQxhRIBU0wl-a2Fyhanjvsdmi91uD8TI0weOhEwhMvS0GvyaA3eOb9I_F0Pum",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"EmpNo\" = 101, \"EmpName\" = \"TS\", \"Salary\" = 12000, \"DeptName\" = \"IT\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST EMPLOYEES http://localhost:10231/v1/odata/Employees?$filter=DeptName eq 'IT'",
+			"request": {
+				"url": "http://localhost:10231/v1/odata/Employees?$filter=DeptName eq 'IT'",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer cD9cYc8Mjw-KLwqhmO0ikQbnNJvBc6COEy-7BETbyycAL4KLiz7qkfDd-VlLD78VfoblmY-GU_upoXkscFGy4QVZjpbwsTQtpt9o_BROc7KhmjDcC3ykqIvzjiEch9kcrNX-0LsuK9fTWwGXngw13P0ghcaebYVCqH9WcBt7tWpiSdbtarBRKdnr2rMuV_PPbbo9QOWZk82hronTigSvYXkXj9L4IQUd4doIOzU005HiqSEdvHczx-Iec5ahzJPGoeWOyHEZf26rhqbyXY2UvrJxObWyVgL8EWd5fMFm81LORP2hWzZYBJrj9LhYyXWXsXWlc031PJEEnXXx4_bdGVFe2KOxydP6YHB3jn_7y2HpNyeie9QS5sDJxWCrcv0-PUHw5gTUMyKMvy-gFpfh1eWkI9w_yKJGWydTISCo2G-5Ajpcn-TlCaFy3qttvXGECQ3AQxhRIBU0wl-a2Fyhanjvsdmi91uD8TI0weOhEwhMvS0GvyaA3eOb9I_F0Pum",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"EmpNo\" = 101, \"EmpName\" = \"TS\", \"Salary\" = 12000, \"DeptName\" = \"IT\" }"
 				},
 				"description": ""
 			},
