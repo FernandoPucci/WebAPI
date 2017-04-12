@@ -1,4 +1,5 @@
-﻿using ResourcesServer.Models;
+﻿using Microsoft.Web.Http;
+using ResourcesServer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,10 @@ using System.Web.Http;
 namespace ResourcesServer.Controllers
 {
     [Authorize]
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    //[Route("api/v{version:apiVersion}/[controller]")]
+    [RoutePrefix("api/v{version:apiVersion}/Employees")]
     public class EmployeesController : ApiController
     {
         EmployeesContext db = new EmployeesContext();
@@ -21,8 +26,9 @@ namespace ResourcesServer.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-      
 
+        [HttpGet]
+        [Route]
         public IQueryable<Employee> Get()
         {
 
@@ -30,24 +36,27 @@ namespace ResourcesServer.Controllers
 
         }
 
-        //V1
-        //[HttpGet]
-        //[Route("api/Employees/{key}")]
-        //public SingleResult<Employee> Get(int key)
-        //{
-        //    IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
-        //    return SingleResult.Create(result);
-        //}
-
         [HttpGet]
-        [Route("api/Employees/{key}")]
+        [Route("{key}")]
         public Employee Get(int key)
         {
             IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
             return result.FirstOrDefault();
         }
 
+
+        //V2
+        [HttpGet, MapToApiVersion("2.0")] //Map this method to next version in the same controller     
+        [Route("{key}")]
+        public SingleResult<Employee> GetV2(int key) //Rename the method
+        {
+            IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
+            return SingleResult.Create(result);
+        }
+
+
         [HttpPost]
+        [Route]
         public async Task<IHttpActionResult> Post(Employee employee)
         {
             if (!ModelState.IsValid)
@@ -56,8 +65,8 @@ namespace ResourcesServer.Controllers
             }
             db.Employees.Add(employee);
             await db.SaveChangesAsync();
-            return Created("",employee);
+            return Created("", employee);
         }
-      
+
     }
 }
