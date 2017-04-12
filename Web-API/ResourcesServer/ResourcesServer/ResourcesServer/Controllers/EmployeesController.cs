@@ -68,5 +68,14 @@ namespace ResourcesServer.Controllers
             return Created("", employee);
         }
 
+        //TODO:
+        public void Put(int id, string value)
+        {
+        }
+        
+        public void Delete(int id)
+        {
+        }
+
     }
 }
