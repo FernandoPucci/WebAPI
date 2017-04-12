@@ -33,7 +33,7 @@ namespace AuthorizationServer.Controllers
         [Route("Login")]
         public async Task<HttpResponseMessage> LoginUser(LoginUserBindingModel model)
         {
-            // Invoke the "token" OWIN service to perform the login: /api/token
+            // Invoke the "token" OWIN service to perform the login: /token
             // Ugly hack: I use a server-side HTTP POST because I cannot directly invoke the service (it is deeply hidden in the OAuthAuthorizationServerHandler class)
             var request = HttpContext.Current.Request;
             var tokenServiceUrl = request.Url.GetLeftPart(UriPartial.Authority) + request.ApplicationPath + "/Token";
