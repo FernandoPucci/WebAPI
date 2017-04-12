@@ -22,7 +22,7 @@ namespace ResourcesServer.Controllers
             base.Dispose(disposing);
         }
       
-        //[EnableQuery(PageSize = 3])
+
         public IQueryable<Employee> Get()
         {
 
@@ -30,12 +30,21 @@ namespace ResourcesServer.Controllers
 
         }
 
+        //V1
+        //[HttpGet]
+        //[Route("api/Employees/{key}")]
+        //public SingleResult<Employee> Get(int key)
+        //{
+        //    IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
+        //    return SingleResult.Create(result);
+        //}
 
         [HttpGet]
-        public SingleResult<Employee> Get(int key)
+        [Route("api/Employees/{key}")]
+        public Employee Get(int key)
         {
             IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
-            return SingleResult.Create(result);
+            return result.FirstOrDefault();
         }
 
         [HttpPost]

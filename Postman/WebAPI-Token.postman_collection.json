@@ -290,7 +290,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"Email\":\"jose.silva@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+					"raw": "{\n\"Username\":\"jose.silva@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
 				},
 				"description": ""
 			},
@@ -356,6 +356,51 @@
 							"enabled": false
 						}
 					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST EMPLOYEES 21612",
+			"request": {
+				"url": "http://localhost:21612/api/Employees/4",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer MMt85tE3qinQvXVdcnpOMzVIiqDJKltwimxdMzHJqmf6FU1OvE5X073jFe6VRfPSJ5MCe57GPZa2E5u2su6noq4FLRNVGqKwptemcNnTWsrJwwDnrvf7I_rZZbC-L8SPZnTNn1jxNFuEkCc2Bjz3kZKDRBGwe9HyAI29UefuuDqYZ3SEI4eOIlZUOl6Ne_E1mbdKcsKnWy-bv3Ef_hUdeZ_NczbjvaL0xpsUVYmxT1TD475a25Jrn8wCuYuOgquvCOcwwO-SwDfM0HxMd_1gJYBA9qvHubf4bkEqlEgB0Ada87m59911OnJuBP-YVQUrPyyuVaoTsN79-ZhNjmP5urSaY2t8cndmR3l7ZMGjyK_WQbJWlcOh34lrMl4d0M2IefXg4-BZmidtDyM3Tw4am8nGcIK2yuTRJX7IZCjQ1yHaHRcAQ9UkdzuKjfZXTAOBU8d75F637e_KBDlNzpx8HOb01BgTzRgJZPGmQ1IEcZ8fl9x262FSQhR5Nve1_Cx8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"EmpNo\" = 101, \"EmpName\" = \"TS\", \"Salary\" = 12000, \"DeptName\" = \"IT\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST EMPLOYEE 21612",
+			"request": {
+				"url": "http://localhost:21612/api/Employees",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer QFb_Vk1Dxy9xQ25srtZXERvefVN5PWS_lj4xgrMcnP779JVBxsqUmBneBoCMqUl64zAuZhtsZ7Znvdkgbu4ffgdiOeMLJNFtpk4sBP6dWiyPiR065ZIH2E9urvT7q0-r0LA_R-gErrUBggNNbmv5TSI1h4dEj4B8LsLdNLHFdWMEPrEPtkH7SDxEhxv7_fvyUnqObfFDwky8nruaOEAKaNr2YbJ4ft63biGzKRuLVdNNGrECKCQoDoP3wbHx1pPwKk4_VQ6WltL-HyDDYCQ7LGgKsJa430f2Lne7Zq3MxGchevuDzwH99NzRsiJL2Yvc94Ryx40I1oBIFES196TfKTbhRP69EqLeQbMdv1uU0Y9IY2cB4HBsre-3rbnc5vqPmHpLEGuklg_Ym3wjQNLFmiuAuda_MCzK7Kv4OHSlwJZLZ6t_QF7t0dilXZoMuLeoA8t48h5HC4BJLJNA1TAFz-Cgq4Dm7vsz1t35IPnzxT7eQiYIM3mDeh-qtrSj8QSx",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"EmpName\" : \"Anacleto Silva\", \"Salary\" : 2000, \"DeptName\" : \"TI\"}\r\n"
 				},
 				"description": ""
 			},
