@@ -364,12 +364,12 @@
 		{
 			"name": "GET LIST EMPLOYEES 21612",
 			"request": {
-				"url": "http://localhost:21612/api/Employees",
+				"url": "http://localhost:21612/api/v1/Employees/2",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer fpNFi-OsEkqbAHBk2A3a8Jcly4JpuY2mnbDg45h2jyfe6Ktc_SAKDkfYxZHjqzb_GW4rKHnppk-AkaWgvYB8HOLi66HC7qnlAUY1UCer_vYqGze_WR_uOIo3hh5cIT-RIodwfkYmzngmmWZl8kP6oA4OYGzKPJY1cOGDv36B_w0DN3bj1_Lmx_7wAqyf_LzwrNWBo6kiuoTNCit-7HM-ak4LEbEhCCv2BrScfe5Uc8555gE0aciqZk10zrhJeBgPbigf7Kv-fZYdnYALIn5ie7R8sJf1eiB4a0pW9zkm1iflh7SVdJiOOfPZAokgnmF_dZy8GsUj1ViXuDX3x7Gb-6TJ_XofVfMHepdVCm3DAc_tZeyyeoPpESwLhNmpQmeywyZEpC07t09rtmNcVPsh0zkafZH7XTjGCxn5GWgPVLVrVDN6g55VOyiS7IHbODgGPYb_oRDa23iMwbPU7DulhQX6f5Y9zC0HWYNiZmuwhCLQFFHg1lHfn7g35kKFmS0D",
+						"value": "Bearer FCiyBaaj5dRBs4xe0pe_Ut6IQk2rPEoeBgYkLcB-alM_NYTnmy1tQ0SrQNZWmUkvN2-Q371ZNDZj4pv0Hn-Ua04jHwr66tiMVsWAab7yRNwjMcBF6DYAKWTucHq3CYEYtRJvYe1QdgLPPRgI3d1L3dmq6TFjzRuAUYnPLXXc5p3gKBI9aVecG_-5MErEJ8yl9jXk33up9sJkAyImuhlawg1TEFa4o8Vxh96DEKf-8b0h8RrozFaAnflNWTydPxRU_UBTvrywqf1E7hBM2dBBcgkKr8PtiKRVZ8YBNMZ4HFOIOWngra1ct5890rvs-6AXOqR6sOqdKPK1f82qZj2DA98nwzYbAVTkUNPeze9KuZHSwp_ylTT9BYVl4_b3dMKAoOnSg194ehxibbbUxYfwcEmfwe-MYPh610pJfzAm5RwhKIvmcfDlecYsvRaA6V9ty1MU1ABc1StOJ4GlvlUMHO4J1ip4GWi75oyRlRQJInz22oUVU0xp3AVEIIYut8Wt",
 						"description": ""
 					}
 				],
