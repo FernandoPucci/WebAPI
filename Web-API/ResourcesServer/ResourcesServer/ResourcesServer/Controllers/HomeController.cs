@@ -10,7 +10,7 @@ namespace ResourcesServer.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "..:: Resources Server";
 
             return View();
         }

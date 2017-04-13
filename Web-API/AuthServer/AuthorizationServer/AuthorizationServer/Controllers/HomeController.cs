@@ -10,7 +10,7 @@ namespace AuthorizationServer.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "..:: Authorization Server";
 
             return View();
         }
