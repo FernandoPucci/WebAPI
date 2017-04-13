@@ -34,7 +34,7 @@ namespace AuthorizationServer.Controllers
         public async Task<HttpResponseMessage> LoginUser(LoginUserBindingModel model)
         {
             // Invoke the "token" OWIN service to perform the login: /token
-            // Ugly hack: I use a server-side HTTP POST because I cannot directly invoke the service (it is deeply hidden in the OAuthAuthorizationServerHandler class)
+            // Use a server-side HTTP POST because I cannot directly invoke the service (it is deeply hidden in the OAuthAuthorizationServerHandler class)
             var request = HttpContext.Current.Request;
             var tokenServiceUrl = request.Url.GetLeftPart(UriPartial.Authority) + request.ApplicationPath + "/Token";
             using (var client = new HttpClient())
@@ -72,9 +72,12 @@ namespace AuthorizationServer.Controllers
             {
                 UserName = model.Username,
                 Email = model.Username,
-                Name = model.Username.IndexOf("@") > 0
+                Name = model.Name == null ? (model.Username.IndexOf("@") > 0
                  ? model.Username.Substring(0, model.Username.IndexOf("@"))
-                 : model.Username
+                 : model.Username) : model.Name,
+                EmailConfirmed = true,
+                PermissionRole = model.PermissionRole == null ? "DEFAULT_USER" : model.PermissionRole.ToUpper(), //pode vir de outro local
+                CreationDate = DateTime.Now
             };
 
             IdentityResult result = await this.UserManager.CreateAsync(user, model.Password);
@@ -88,7 +91,7 @@ namespace AuthorizationServer.Controllers
             var loginResult = this.LoginUser(new LoginUserBindingModel()
             {
                 Username = model.Username,
-                Password = model.Password,
+                Password = model.Password,//verificar possibilidade de capturar senha criptografada para login
 
             });
             return await loginResult;
@@ -177,6 +180,8 @@ namespace AuthorizationServer.Controllers
         public string Password { get; set; }
 
         public string Name { get; set; }
+  
+        public string PermissionRole { get; set; }
 
     }
     #endregion
