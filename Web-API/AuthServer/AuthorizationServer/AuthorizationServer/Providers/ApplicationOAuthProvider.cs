@@ -41,7 +41,24 @@ namespace AuthorizationServer.Providers
             ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
                 CookieAuthenticationDefaults.AuthenticationType);
 
-            AuthenticationProperties properties = CreateProperties(user.UserName);
+
+
+            //Adding Claim to recover into Resource Server          
+            oAuthIdentity.AddClaim(new Claim("userName", user.UserName));
+            oAuthIdentity.AddClaim(new Claim("name", user.Name));
+            oAuthIdentity.AddClaim(new Claim("permissionRole", user.PermissionRole));
+            oAuthIdentity.AddClaim(new Claim("creationDate", user.CreationDate.ToString()));
+
+            //cookiesIdentity.AddClaim(new Claim("userName", user.UserName));
+            //cookiesIdentity.AddClaim(new Claim("name", user.Name));
+            //cookiesIdentity.AddClaim(new Claim("permissionRole", user.PermissionRole));
+            //cookiesIdentity.AddClaim(new Claim("creationDate", user.CreationDate.ToString()));
+
+
+            AuthenticationProperties properties = CreateProperties(user.UserName
+                                                                    , user.Name
+                                                                    , user.PermissionRole
+                                                                    , user.CreationDate);
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
@@ -83,11 +100,23 @@ namespace AuthorizationServer.Providers
             return Task.FromResult<object>(null);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName)
+        /// <summary>
+        // Add Properties to User to insert  into context
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="name"></param>
+        /// <param name="permissionRole"></param>
+        /// <param name="creationDate"></param>
+        /// <returns></returns>
+        public static AuthenticationProperties CreateProperties(string userName, string name, string permissionRole, DateTime creationDate)
         {
             IDictionary<string, string> data = new Dictionary<string, string>
             {
-                { "userName", userName }
+                { "userName", userName },
+                { "name", name},
+                { "permissionRole", permissionRole },
+                { "creationDate", creationDate.ToString() },
+
             };
             return new AuthenticationProperties(data);
         }

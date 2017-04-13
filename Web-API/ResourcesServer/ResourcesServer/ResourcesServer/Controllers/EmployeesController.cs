@@ -1,6 +1,8 @@
 ﻿using Microsoft.Web.Http;
 using ResourcesServer.Models;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -28,6 +30,13 @@ namespace ResourcesServer.Controllers
         [Route]
         public IQueryable<Employee> Get()
         {
+
+            var identity = User.Identity as ClaimsIdentity;
+
+            foreach (Claim c in identity.Claims) {
+                Debug.WriteLine(c.Type + " >> " + c.Value);
+
+            }
 
             return db.Employees.AsQueryable();
 

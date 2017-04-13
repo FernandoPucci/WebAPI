@@ -19,7 +19,7 @@ namespace ResourcesServer.Providers
 
         public ApplicationOAuthProvider(string publicClientId)
         {
-            if (publicClientId == null)
+           if (publicClientId == null)
             {
                 throw new ArgumentNullException("publicClientId");
             }

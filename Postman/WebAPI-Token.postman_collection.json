@@ -273,7 +273,7 @@
 						},
 						{
 							"key": "client_id",
-							"value": "jose.silva@consinco.com.br",
+							"value": "fernando.pucci@consinco.com.br",
 							"type": "text",
 							"enabled": true
 						},
@@ -303,7 +303,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"Username\":\"jose.silva@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+					"raw": "{\n\"Username\":\"fernando.pucci@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
 				},
 				"description": ""
 			},
@@ -323,7 +323,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"Username\":\"jose.silva@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+					"raw": "{\n\"Username\":\"fernando.pucci@consinco.com.br\",\n\"Password\":\"123456Test&\",\n\"Name\":\"Fernando Silva Pucci\",\n\"PermissionRole\": \"administrator\"\n}"
 				},
 				"description": ""
 			},
@@ -332,12 +332,12 @@
 		{
 			"name": "GET LIST EMPLOYEES 21612",
 			"request": {
-				"url": "http://localhost:21612/api/v1/Employees/2",
+				"url": "http://localhost:21612/api/v1/Employees",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eqDHizGSWJUAIAMWyE6pbd6Ofahx5BKT5UyDBJ-Dlj1WSSSIqA-wVpYJpdyldzeHupNuTJzWG9H4mNZM-5Dmx_NL-1s2cSVZSm_mgJX0rO1qrQhcPTuGnRSZeEjXsCyCrzS0lemT1uLC9zWO-bRy4VuGZWqN28SoS5rclE7m0H8VXrZ7G46Eaz3JZ78gvVfORvsOet66KsoV4mfChunoeHfwDaNMj2zne5a0O8uxJMXzIFRGdounYFMgJ2WkQ5W9v3dbWYJV60Nx9_fxErkXNRDotHLVMm6XUfD-CgITFuJaYJhWI8e3XLtSXKiOQrzwvMgdgtlRx9gfvJA1jtQcT690MecFDPERypq-n2Q6WMs9ftk9AxpXS6i4RYFWRy3141Su8q6iUIHx-ebzNQVYC2MLMoGzU47mK1mPHiTXlyrcRMWrpDKOUFEqXDmVuz--CVCXuV07nHvp9k9Kc5HkPy-stcukzzIIR45jvjU9FaKp2tkE_gRE_CdEOGFDSA72",
+						"value": "Bearer lbZuoY2PeCkjnoZ32Du-VIKPNzK5zR0i9vTmiRV0C4tibdsDuKcZjKscmiQAp7kuB2ZsLDTBXgl-725mTULLl7WBPt2ezmSMB3tE4ZFL_hZ-qDKvQGJkzGj5aLf8P1zj095Ra5WAzXEbyeUV-p4pnFqPAjvclXmJ5jW7UxWYTCLcUn7BBtFXGkDPBc3QVuqu53JLcsNOWfu8_RFvDe5L-VAWtBsC1bn-AH-hINeUQ3m0aR25mkDtIfJyYc0nKgrAt7BRnVltlvjDmkJu_IEmAjBSdpKzeOqKUobWW1E3x34Ekqf6KdHqB9VIx_atADQhULQ12Iy89TM0e4_BShIMirQ-jj1gbYf8vmSGR2VkWbVPL9uq3InNDiJ450CTtWWGWuuBJp3j5yHabYp_NhQ8jtGDIl2CFh7LSx2ElL7hbGR_hrVSeXvNIKDYhyLM1fSGfaNdHIpKV_Qq22sgVMGQZqbUmjR2mPjivLKDs3tEiORFoEL-_ZGXubadQqgeJTMupViDqekGRtHtyFCGkiDTyG6FAW0NPYHg74wvT8r_m8UxcKEw15SK8eBDlRmtt8vu8uxDtQ-lf_Eo98K50Dz7J7IukQ38U2P3RemkZPPVEfQ",
 						"description": ""
 					}
 				],
