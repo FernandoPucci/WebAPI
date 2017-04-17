@@ -267,7 +267,7 @@
 					"urlencoded": [
 						{
 							"key": "refresh_token",
-							"value": "f2579477-4aec-4e61-9673-097c57289c30",
+							"value": "034266e6-f8a7-4fa8-9531-945627c2ca72",
 							"type": "text",
 							"enabled": true
 						},
@@ -303,7 +303,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"Username\":\"fernando.pucci@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+					"raw": "{\n\"Username\":\"leticia.grotto@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
 				},
 				"description": ""
 			},
@@ -337,7 +337,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer lbZuoY2PeCkjnoZ32Du-VIKPNzK5zR0i9vTmiRV0C4tibdsDuKcZjKscmiQAp7kuB2ZsLDTBXgl-725mTULLl7WBPt2ezmSMB3tE4ZFL_hZ-qDKvQGJkzGj5aLf8P1zj095Ra5WAzXEbyeUV-p4pnFqPAjvclXmJ5jW7UxWYTCLcUn7BBtFXGkDPBc3QVuqu53JLcsNOWfu8_RFvDe5L-VAWtBsC1bn-AH-hINeUQ3m0aR25mkDtIfJyYc0nKgrAt7BRnVltlvjDmkJu_IEmAjBSdpKzeOqKUobWW1E3x34Ekqf6KdHqB9VIx_atADQhULQ12Iy89TM0e4_BShIMirQ-jj1gbYf8vmSGR2VkWbVPL9uq3InNDiJ450CTtWWGWuuBJp3j5yHabYp_NhQ8jtGDIl2CFh7LSx2ElL7hbGR_hrVSeXvNIKDYhyLM1fSGfaNdHIpKV_Qq22sgVMGQZqbUmjR2mPjivLKDs3tEiORFoEL-_ZGXubadQqgeJTMupViDqekGRtHtyFCGkiDTyG6FAW0NPYHg74wvT8r_m8UxcKEw15SK8eBDlRmtt8vu8uxDtQ-lf_Eo98K50Dz7J7IukQ38U2P3RemkZPPVEfQ",
+						"value": "Bearer Yc9CZZqvrPAsx9TlYewu20rtMqT5aIOI3JgSoI4LtRjMpzh_niBuJXPMqelc3lc81AkhS61nP9EFjZuRsHPll_9O6fdE2diwHXOARYas8-POP1DLjOSJuaxoqh3t6xmQHKyJ3mxFroolCMyy3rtBWauZ9XsatCAfNcg23XB7o13-oZ3Ge0Z-LyfJifk5QXEGrnk7wWmG4VchlRWS1nw18JJr4I1H9QxqSkwOdzAb4sgJJWIS4NOsR16uRLJM1BDhaqr0h5gyfX_Zbo7K7dUfv33rEDySMFwhN364Z-1lTWkpeErzw9RbS60lP1zF8WjOtbhvknU_SkS6L-bNf0ja4I4h2qAkNL6Q5Ixy8BRkKeqVQhgBwJySpUtlt6bXUmSTBuzwdmIKqFBAjgaovfNqkm9gJYGs8lztPi-pA_Ks6gyWmbEQNQagaWTqSyrMmdt8tRo5xI5Cagmj4qwgdse9rw0wOMRiG7MgiQgOQWiYEDFsQ3iNqGDtGuJc-1gS0jnqUpV1PhnwUPwdKCOOPzEDunZGXXlVtu4evO-ujudsv4L3P2Kyc6tLRw0Ex4E2jFJ7bJISPG-PQMrQCns4IQvpmBOAvZ0j-u3xGc31omIUM3s",
 						"description": ""
 					}
 				],
@@ -352,12 +352,12 @@
 		{
 			"name": "POST EMPLOYEE 21612",
 			"request": {
-				"url": "http://localhost:21612/api/Employees",
+				"url": "http://localhost:21612/api/v1/Employees",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer QFb_Vk1Dxy9xQ25srtZXERvefVN5PWS_lj4xgrMcnP779JVBxsqUmBneBoCMqUl64zAuZhtsZ7Znvdkgbu4ffgdiOeMLJNFtpk4sBP6dWiyPiR065ZIH2E9urvT7q0-r0LA_R-gErrUBggNNbmv5TSI1h4dEj4B8LsLdNLHFdWMEPrEPtkH7SDxEhxv7_fvyUnqObfFDwky8nruaOEAKaNr2YbJ4ft63biGzKRuLVdNNGrECKCQoDoP3wbHx1pPwKk4_VQ6WltL-HyDDYCQ7LGgKsJa430f2Lne7Zq3MxGchevuDzwH99NzRsiJL2Yvc94Ryx40I1oBIFES196TfKTbhRP69EqLeQbMdv1uU0Y9IY2cB4HBsre-3rbnc5vqPmHpLEGuklg_Ym3wjQNLFmiuAuda_MCzK7Kv4OHSlwJZLZ6t_QF7t0dilXZoMuLeoA8t48h5HC4BJLJNA1TAFz-Cgq4Dm7vsz1t35IPnzxT7eQiYIM3mDeh-qtrSj8QSx",
+						"value": "Bearer Yc9CZZqvrPAsx9TlYewu20rtMqT5aIOI3JgSoI4LtRjMpzh_niBuJXPMqelc3lc81AkhS61nP9EFjZuRsHPll_9O6fdE2diwHXOARYas8-POP1DLjOSJuaxoqh3t6xmQHKyJ3mxFroolCMyy3rtBWauZ9XsatCAfNcg23XB7o13-oZ3Ge0Z-LyfJifk5QXEGrnk7wWmG4VchlRWS1nw18JJr4I1H9QxqSkwOdzAb4sgJJWIS4NOsR16uRLJM1BDhaqr0h5gyfX_Zbo7K7dUfv33rEDySMFwhN364Z-1lTWkpeErzw9RbS60lP1zF8WjOtbhvknU_SkS6L-bNf0ja4I4h2qAkNL6Q5Ixy8BRkKeqVQhgBwJySpUtlt6bXUmSTBuzwdmIKqFBAjgaovfNqkm9gJYGs8lztPi-pA_Ks6gyWmbEQNQagaWTqSyrMmdt8tRo5xI5Cagmj4qwgdse9rw0wOMRiG7MgiQgOQWiYEDFsQ3iNqGDtGuJc-1gS0jnqUpV1PhnwUPwdKCOOPzEDunZGXXlVtu4evO-ujudsv4L3P2Kyc6tLRw0Ex4E2jFJ7bJISPG-PQMrQCns4IQvpmBOAvZ0j-u3xGc31omIUM3s",
 						"description": ""
 					},
 					{
@@ -377,12 +377,92 @@
 		{
 			"name": "GET LIST EMPLOYEES by id 21612",
 			"request": {
-				"url": "http://localhost:21612/api/Employees/4",
+				"url": "http://localhost:21612/api/v1/Employees/1",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer fpNFi-OsEkqbAHBk2A3a8Jcly4JpuY2mnbDg45h2jyfe6Ktc_SAKDkfYxZHjqzb_GW4rKHnppk-AkaWgvYB8HOLi66HC7qnlAUY1UCer_vYqGze_WR_uOIo3hh5cIT-RIodwfkYmzngmmWZl8kP6oA4OYGzKPJY1cOGDv36B_w0DN3bj1_Lmx_7wAqyf_LzwrNWBo6kiuoTNCit-7HM-ak4LEbEhCCv2BrScfe5Uc8555gE0aciqZk10zrhJeBgPbigf7Kv-fZYdnYALIn5ie7R8sJf1eiB4a0pW9zkm1iflh7SVdJiOOfPZAokgnmF_dZy8GsUj1ViXuDX3x7Gb-6TJ_XofVfMHepdVCm3DAc_tZeyyeoPpESwLhNmpQmeywyZEpC07t09rtmNcVPsh0zkafZH7XTjGCxn5GWgPVLVrVDN6g55VOyiS7IHbODgGPYb_oRDa23iMwbPU7DulhQX6f5Y9zC0HWYNiZmuwhCLQFFHg1lHfn7g35kKFmS0D",
+						"value": "Bearer HjpqBptw_iJiE3OFPQbXnYMN7J_-J38uNttGQJ2D-hzu3wMD0d2_UWYlEWE4cA2c8UmiDrkKu31rxUf1_Z-z_qeQeN91R5YaoXxSoFNs1pCkipwk4LNKlWw48MCxYQqVsKnSb7hKOGyi0zEdF90GB6qtjyMIzQlGJc-fCV_47zM86iuur8S29yj1-CPMuNMhodBu1EXM217w9ysDjU0yKc2KRk5Li_kAI05NzW0T_-dGTCmDFWxOM8is82kiLF_tJGdqjLzIsHYQUpbWvWKoeegKyXx2hUCmTnQ5iH2BkEi8qb8kpqOxMGx9qkUE8oAsfF1UOjaxhjVXhvzJqra34CsD94en-wgN6r2qooFaJ99pjRqe16MhImCegKk26jf6fN0zIZZN4F_o5ITjEUp0HRqJwSjRRqA7IwBm4SzlTMoBANJjoWXIjdNUrC4ubbF--w3Tmpe6o2k25T00TJRLcmyAQNERnPGLJZXcyP79ZlS-pPLW2QC8Y3GZtDCjnNoXtjOszorUaBJaf6sbSBWvn0lM-5igoVh_Lm3tgQSIHbfD8pVUzQPp6XH1MIVKgicb-DcseqJToGhBLd9EcFQvhtWuRkwFgVduvV7PNn8vbIY",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"EmpNo\" = 101, \"EmpName\" = \"TS\", \"Salary\" = 12000, \"DeptName\" = \"IT\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:10231/api/Account/Register",
+			"request": {
+				"url": "http://localhost:10231/api/Account/Register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Email\":\"fernando@consinco.com.br\",\n\"Password\":\"123456Test&\",\n\"ConfirmPassword\":\"123456Test&\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST EMPLOYEES by id 21612 DELETE",
+			"request": {
+				"url": "http://localhost:21612/api/v1/Employees/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1pULXgq3zRTYC96NxcpQHr6qI6EsQpzqYPfC9GHNj9awi2ytDqLlbcmOsNxPpC6TxmehhhI6up7byEk0W0dTIf5wuLHKlf-m0WPzAhHH-Wfcg8lSRrEzS618fZh1EbQBX6pU11qGpdlhLQjCM7FNfY3AD7UOUe7k7sF0Oyeqn-l0MBIOe9j7NQyRk9KbWlQY94LAjpXo-V0qlMxglb9GvZ4VjL91ccLGEoP6tDfvo5H0X2Xipp4l6he_SM_-S4QfXyv058z0KKepO4cL9RwQre8nlSabqc-i1ZT9Od-jdR0xiJxP6sSfrb24_OFIfC0bVSRdXjDVoKjhKBOO_nm7HLddCufk9-5Ixpw63lGTog0TsRbsGeTZnJo15UdgbhjEAhmr0WSykQRvLv-09nTfZwQs7PMwFNMi0vXblh7tfxCPzm4ywh12nzYbtNp3RjuLIniKP6ZJDJhmCQ4o5jQTLU0sLlFcBiuWCrLoUMWXGdIMWypD0ivq-UYGcIJg8XNVyoWohPlMpn89nAWcXIPLlDFRXW9yp00lfvNiit_iZBiLzFb9mleG0Oz8MFXvEPXS2qFT7WXcztnfgHRu747CJZXIqz94umoz8lYGOsSETaI",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"EmpNo\" = 101, \"EmpName\" = \"TS\", \"Salary\" = 12000, \"DeptName\" = \"IT\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST EMPLOYEES by id 21612 PATCH",
+			"request": {
+				"url": "http://localhost:21612/api/v1/Employees/1",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1pULXgq3zRTYC96NxcpQHr6qI6EsQpzqYPfC9GHNj9awi2ytDqLlbcmOsNxPpC6TxmehhhI6up7byEk0W0dTIf5wuLHKlf-m0WPzAhHH-Wfcg8lSRrEzS618fZh1EbQBX6pU11qGpdlhLQjCM7FNfY3AD7UOUe7k7sF0Oyeqn-l0MBIOe9j7NQyRk9KbWlQY94LAjpXo-V0qlMxglb9GvZ4VjL91ccLGEoP6tDfvo5H0X2Xipp4l6he_SM_-S4QfXyv058z0KKepO4cL9RwQre8nlSabqc-i1ZT9Od-jdR0xiJxP6sSfrb24_OFIfC0bVSRdXjDVoKjhKBOO_nm7HLddCufk9-5Ixpw63lGTog0TsRbsGeTZnJo15UdgbhjEAhmr0WSykQRvLv-09nTfZwQs7PMwFNMi0vXblh7tfxCPzm4ywh12nzYbtNp3RjuLIniKP6ZJDJhmCQ4o5jQTLU0sLlFcBiuWCrLoUMWXGdIMWypD0ivq-UYGcIJg8XNVyoWohPlMpn89nAWcXIPLlDFRXW9yp00lfvNiit_iZBiLzFb9mleG0Oz8MFXvEPXS2qFT7WXcztnfgHRu747CJZXIqz94umoz8lYGOsSETaI",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"EmpNo\" = 101, \"EmpName\" = \"TS\", \"Salary\" = 12000, \"DeptName\" = \"IT\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST EMPLOYEES by id 21612 PUT",
+			"request": {
+				"url": "http://localhost:21612/api/v1/Employees/1/www",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1pULXgq3zRTYC96NxcpQHr6qI6EsQpzqYPfC9GHNj9awi2ytDqLlbcmOsNxPpC6TxmehhhI6up7byEk0W0dTIf5wuLHKlf-m0WPzAhHH-Wfcg8lSRrEzS618fZh1EbQBX6pU11qGpdlhLQjCM7FNfY3AD7UOUe7k7sF0Oyeqn-l0MBIOe9j7NQyRk9KbWlQY94LAjpXo-V0qlMxglb9GvZ4VjL91ccLGEoP6tDfvo5H0X2Xipp4l6he_SM_-S4QfXyv058z0KKepO4cL9RwQre8nlSabqc-i1ZT9Od-jdR0xiJxP6sSfrb24_OFIfC0bVSRdXjDVoKjhKBOO_nm7HLddCufk9-5Ixpw63lGTog0TsRbsGeTZnJo15UdgbhjEAhmr0WSykQRvLv-09nTfZwQs7PMwFNMi0vXblh7tfxCPzm4ywh12nzYbtNp3RjuLIniKP6ZJDJhmCQ4o5jQTLU0sLlFcBiuWCrLoUMWXGdIMWypD0ivq-UYGcIJg8XNVyoWohPlMpn89nAWcXIPLlDFRXW9yp00lfvNiit_iZBiLzFb9mleG0Oz8MFXvEPXS2qFT7WXcztnfgHRu747CJZXIqz94umoz8lYGOsSETaI",
 						"description": ""
 					}
 				],
