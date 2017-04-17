@@ -23,7 +23,9 @@ namespace AuthorizationServer.Providers
         {
             var guid = Guid.NewGuid().ToString();
 
-
+            int expire =  60; //time in minutes
+            context.Ticket.Properties.ExpiresUtc = new DateTimeOffset(DateTime.Now.AddMinutes(expire));
+                        
             _refreshTokens.TryAdd(guid, context.Ticket);
             
             context.SetToken(guid);
