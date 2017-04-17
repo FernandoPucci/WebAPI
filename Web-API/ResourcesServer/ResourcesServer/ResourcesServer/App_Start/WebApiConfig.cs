@@ -48,6 +48,9 @@ namespace ResourcesServer
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //Swagger Register
+            //SwaggerConfig.Register();
         }
     }
 }

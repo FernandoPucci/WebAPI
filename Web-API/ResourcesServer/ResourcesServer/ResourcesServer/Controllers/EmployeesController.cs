@@ -29,9 +29,14 @@ namespace ResourcesServer.Controllers
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Get a list of Employees (Need Authentication) (Only for ADMINISTRATOR roles)
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>A list o Empoyees</returns>
         [HttpGet]
         [Route]
-        [ResponseType(typeof(IQueryable<Employee>))]
+        [ResponseType(typeof(IQueryable<Employee>))]        
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
 
@@ -46,6 +51,12 @@ namespace ResourcesServer.Controllers
 
         }
 
+        /// <summary>
+        /// Get a Employee that correspond to a Key (Need Authentication) 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="key">Identifier Parameter</param>
+        /// <returns>Employee Object</returns>
         [HttpGet]
         [Route("{key}")]
         [ResponseType(typeof(Employee))]
@@ -61,7 +72,12 @@ namespace ResourcesServer.Controllers
         }
 
 
-        //V2
+        /// <summary>
+        /// Get a Employee that correspond to a Key - version 2.0 (Need Authentication) 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="key">Identifier Parameter</param>
+        /// <returns>Employee IQueryable Object</returns>
         [HttpGet, MapToApiVersion("2.0")] //Map this method to next version in the same controller     
         [Route("{key}")]
         [ResponseType(typeof(SingleResult<Employee>))]
@@ -78,7 +94,16 @@ namespace ResourcesServer.Controllers
                                                                                            //only is the type of return 
                                                                                            //(Employee Object @v1 vs. IQeryable @v2)
         }
-        
+
+        /// <summary>
+        /// Save a new Employee or Update an existent
+        /// </summary>
+        /// <param name="employee">JSON Object representative of an Employee</param>
+        /// <returns></returns>
+        /// <responsecode>200 - Ok</responsecode>
+        /// <responsecode>400 - Bad Request</responsecode>
+        /// <responsecode>401 - Unauthorized</responsecode>
+        /// <responsecode>500 - Internal Server Error</responsecode>
         [HttpPost]
         [Route]
         public async Task<IHttpActionResult> Post(Employee employee)
@@ -106,6 +131,13 @@ namespace ResourcesServer.Controllers
         }
 
         //TODO:
+        /// <summary>
+        /// Update an attribute of an Employee
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="key">Identifier Parameter</param>
+        /// <param name="value">Attribute</param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{key}/{value}")]
         public HttpResponseMessage Put(HttpRequestMessage request, int key, string value)
@@ -113,6 +145,12 @@ namespace ResourcesServer.Controllers
             return request.CreateResponse(HttpStatusCode.MethodNotAllowed);
         }
 
+        /// <summary>
+        /// Remove a Employee from Database
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="key">Identifier Parameter</param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{key}")]
         public HttpResponseMessage Delete(HttpRequestMessage request, int key)
@@ -120,6 +158,13 @@ namespace ResourcesServer.Controllers
             return request.CreateResponse(HttpStatusCode.MethodNotAllowed);
         }
 
+
+        /// <summary>
+        /// Update/Overwrite a Employee
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="key">Identifier Parameter</param>
+        /// <returns></returns>
         [HttpPatch]
         [Route("{key}")]
         public HttpResponseMessage Patch(HttpRequestMessage request, int key)
