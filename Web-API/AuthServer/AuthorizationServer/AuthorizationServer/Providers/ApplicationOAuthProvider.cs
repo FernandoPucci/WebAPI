@@ -101,7 +101,7 @@ namespace AuthorizationServer.Providers
         }
 
         /// <summary>
-        // Add Properties to User to insert  into context
+        // Add Properties to User to insert  into context and response
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="name"></param>
