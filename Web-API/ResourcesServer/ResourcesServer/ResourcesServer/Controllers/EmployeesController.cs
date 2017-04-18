@@ -16,9 +16,9 @@ namespace ResourcesServer.Controllers
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
     [RoutePrefix("api/v{version:apiVersion}/Employees")]
-    public class EmployeesController : ApiController
+    public abstract class EmployeesController : ApiController
     {
-        EmployeesContext db = new EmployeesContext();
+        protected EmployeesContext db = new EmployeesContext();
         private bool EmployeesExists(int key)
         {
             return db.Employees.Any(p => p.EmpNo == key);
@@ -37,7 +37,7 @@ namespace ResourcesServer.Controllers
         [HttpGet]
         [Route]
         [ResponseType(typeof(IQueryable<Employee>))]        
-        public HttpResponseMessage Get(HttpRequestMessage request)
+        public  HttpResponseMessage Get(HttpRequestMessage request)
         {
 
             var identity = User.Identity as ClaimsIdentity;
@@ -60,7 +60,7 @@ namespace ResourcesServer.Controllers
         [HttpGet]
         [Route("{key}")]
         [ResponseType(typeof(Employee))]
-        public HttpResponseMessage Get(HttpRequestMessage request, int key)
+        public  HttpResponseMessage Get(HttpRequestMessage request, int key)
         {
             IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
 

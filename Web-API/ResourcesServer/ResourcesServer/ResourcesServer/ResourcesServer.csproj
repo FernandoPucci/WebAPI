@@ -248,12 +248,15 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\EmployeesV3Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\AssignOAuth2SecurityRequirements.cs" />
     <Compile Include="Filters\MultipleOperationsWithSameVerbFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AuthenticationHelper.cs" />
+    <Compile Include="Helpers\AuthenticationServerEnvironmentHelper.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -323,6 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\EmployeesV3\" />
     <Folder Include="Views\Employees\" />
   </ItemGroup>
   <ItemGroup>
