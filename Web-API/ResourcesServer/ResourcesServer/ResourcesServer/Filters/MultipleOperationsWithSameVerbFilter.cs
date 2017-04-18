@@ -1,4 +1,5 @@
 ﻿using Swashbuckle.Swagger;
+using System;
 using System.Web.Http.Description;
 
 namespace ResourcesServer.Filters
@@ -16,7 +17,8 @@ namespace ResourcesServer.Filters
         {
             if (operation.parameters != null)
             {
-                operation.operationId += "By";
+                Guid hash = Guid.NewGuid(); 
+                operation.operationId += hash;
                 foreach (var parm in operation.parameters)
                 {
                     operation.operationId += string.Format("{0}", parm.name);
