@@ -19,7 +19,7 @@ namespace ResourcesServer.Controllers
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
     [RoutePrefix("api/v{version:apiVersion}/Employees")]
-    public abstract class EmployeesController : ApiController
+    public class EmployeesController : ApiController
     {
         #region Database Configurations
         protected EmployeesContext db = new EmployeesContext();

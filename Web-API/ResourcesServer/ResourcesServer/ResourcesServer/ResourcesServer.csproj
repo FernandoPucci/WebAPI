@@ -248,7 +248,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
-    <Compile Include="Controllers\EmployeesV3Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\AssignOAuth2SecurityRequirements.cs" />
     <Compile Include="Filters\MultipleOperationsWithSameVerbFilter.cs" />
