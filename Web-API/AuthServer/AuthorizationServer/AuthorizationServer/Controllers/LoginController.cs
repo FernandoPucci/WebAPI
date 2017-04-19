@@ -16,18 +16,25 @@ using System.Web.Http;
 namespace AuthorizationServer.Controllers
 {
     /// <summary>
-    /// Classe de Login Personalizada
-    ///  1- Registro do usuário na aplicação (já recebe token)
-    ///  2- Login - Atualização do Token
+    /// Login Customized Class
+    ///  #1- Use "Register()" call to register User into application. This operation also returns a valid Token
+    ///  #2- Login() Operation - Token and Refresh Token is updated
     /// </summary>
     [Authorize]
     [RoutePrefix("api/user")]
     public class UserController : ApiController
     {
+        #region Local Variables
         private ApplicationUserManager _userManager;
+        #endregion
 
-        #region Metodos para login e registro de usuario
-        // POST api/User/Login
+        #region Login and User registry actions
+
+        /// <summary>
+        /// This method returns Login Information to the User, including token and Refresh Token - POST api/User/Login
+        /// </summary>
+        /// <param name="model">User Model</param>
+        /// <returns>Assyncronous Login Task</returns>
         [HttpPost]
         [AllowAnonymous]
         [Route("Login")]
@@ -57,7 +64,11 @@ namespace AuthorizationServer.Controllers
             }
         }
 
-        // POST api/User/Register
+        /// <summary>
+        /// Method used to Register a new User into application. After registerm the login is done automatically - POST api/User/Register
+        /// </summary>
+        /// <param name="model">Register model</param>
+        /// <returns>Assyncronous resgistration Task</returns>
         [HttpPost]
         [AllowAnonymous]
         [Route("Register")]
@@ -109,7 +120,7 @@ namespace AuthorizationServer.Controllers
 
         #endregion
 
-        #region Propriedades
+        #region Properties
 
         private ApplicationUserManager UserManager
         {
@@ -159,7 +170,7 @@ namespace AuthorizationServer.Controllers
         #endregion
     }
 
-    #region Objetos de Login
+    #region Login Objects
     public class LoginUserBindingModel
     {
         [Required]

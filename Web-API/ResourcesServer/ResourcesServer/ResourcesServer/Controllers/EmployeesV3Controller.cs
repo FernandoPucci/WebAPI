@@ -10,6 +10,9 @@ using System.Web.Http.Description;
 
 namespace ResourcesServer.Controllers
 {
+    /// <summary>
+    /// TEST - Employees V3 - Versioning Control Test
+    /// </summary>
     [Authorize]
     [ApiVersion("1.0")]
     [ApiVersion("3.0")]
@@ -17,6 +20,12 @@ namespace ResourcesServer.Controllers
     public class EmployeesV3Controller : EmployeesController
     {
 
+        /// <summary>
+        /// Override og 'Get()' method from Employee V1 mapped to V3
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         [HttpGet, MapToApiVersion("3.0")] 
         [Route("{key}")]
         public  HttpResponseMessage Get(HttpRequestMessage request, int key) 

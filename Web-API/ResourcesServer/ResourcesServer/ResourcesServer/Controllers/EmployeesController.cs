@@ -12,12 +12,16 @@ using System.Web.Http.Description;
 
 namespace ResourcesServer.Controllers
 {
+    /// <summary>
+    /// Employees Controller - default operations isn't abstract, but here, abstractd is added because of 'EmployeesV3' inheritance.
+    /// </summary>
     [Authorize]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
     [RoutePrefix("api/v{version:apiVersion}/Employees")]
     public abstract class EmployeesController : ApiController
     {
+        #region Database Configurations
         protected EmployeesContext db = new EmployeesContext();
         private bool EmployeesExists(int key)
         {
@@ -28,6 +32,9 @@ namespace ResourcesServer.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+        #endregion
+
+        #region Default Verbs
 
         /// <summary>
         /// Get a list of Employees (Need Authentication) (Only for ADMINISTRATOR roles)
@@ -36,8 +43,8 @@ namespace ResourcesServer.Controllers
         /// <returns>A list o Empoyees</returns>
         [HttpGet]
         [Route]
-        [ResponseType(typeof(IQueryable<Employee>))]        
-        public  HttpResponseMessage Get(HttpRequestMessage request)
+        [ResponseType(typeof(IQueryable<Employee>))]
+        public HttpResponseMessage Get(HttpRequestMessage request)
         {
 
             var identity = User.Identity as ClaimsIdentity;
@@ -60,11 +67,12 @@ namespace ResourcesServer.Controllers
         [HttpGet]
         [Route("{key}")]
         [ResponseType(typeof(Employee))]
-        public  HttpResponseMessage Get(HttpRequestMessage request, int key)
+        public HttpResponseMessage Get(HttpRequestMessage request, int key)
         {
             IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
 
-            if (result == null || result.Count() == 0) {
+            if (result == null || result.Count() == 0)
+            {
                 return request.CreateResponse(HttpStatusCode.NoContent);
             }
 
@@ -129,6 +137,9 @@ namespace ResourcesServer.Controllers
 
             return Created("", employee);
         }
+        #endregion
+        
+        #region Verbs not implementad yet
 
         //TODO:
         /// <summary>
@@ -172,7 +183,7 @@ namespace ResourcesServer.Controllers
             return request.CreateResponse(HttpStatusCode.MethodNotAllowed);
         }
 
-      
+        #endregion
 
     }
 }
