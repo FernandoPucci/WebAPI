@@ -21,10 +21,10 @@ namespace ResourcesServer
             config.AddApiVersioning(o =>
             {
                 o.ReportApiVersions = true;
-                o.AssumeDefaultVersionWhenUnspecified = true;
-                o.DefaultApiVersion = new ApiVersion(1, 0); //Major version, minor version
-        //      o.ApiVersionSelector = new VersioningCurrentImplementationApiVersionSelector(o);
 
+                o.DefaultApiVersion = new ApiVersion(2, 0); //Major Version  / Minor version
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.ApiVersionReader = new MediaTypeApiVersionReader();
             });
 
             //Routes for versioning
@@ -44,12 +44,7 @@ namespace ResourcesServer
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            config.AddApiVersioning(o =>
-            {
-                o.DefaultApiVersion = new ApiVersion(1, 0);
-                o.AssumeDefaultVersionWhenUnspecified = true;
-                o.ApiVersionReader = new MediaTypeApiVersionReader();
-            });
+   
 
             //Swagger Register
             //SwaggerConfig.Register();
