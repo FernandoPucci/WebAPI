@@ -18,6 +18,16 @@ namespace ResourcesServer
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            //routes.MapRoute(
+            //    name: "Employee",
+            //    url: "api/v1/{controller}/{action}/{id}",
+            //    defaults: new { controller = "Employee"}
+            //);
+            //routes.MapRoute(
+            //    name: "EmployeeV2",
+            //    url: "api/v2/{controller}/{action}/{id}",
+            //    defaults: new { controller = "EmployeeV2" }
+            //);
         }
     }
 }

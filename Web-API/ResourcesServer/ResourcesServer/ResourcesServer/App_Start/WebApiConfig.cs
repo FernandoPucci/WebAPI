@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
-using Newtonsoft.Json.Serialization;
 using Microsoft.Web.Http;
-using Microsoft.Web.Http.Versioning;
 using System.Web.Http.Routing;
 using Microsoft.Web.Http.Routing;
+using Microsoft.Web.Http.Versioning;
 
 namespace ResourcesServer
 {
@@ -27,7 +23,7 @@ namespace ResourcesServer
                 o.ReportApiVersions = true;
                 o.AssumeDefaultVersionWhenUnspecified = true;
                 o.DefaultApiVersion = new ApiVersion(1, 0); //Major version, minor version
-                o.ApiVersionSelector = new CurrentImplementationApiVersionSelector(o);
+        //      o.ApiVersionSelector = new VersioningCurrentImplementationApiVersionSelector(o);
 
             });
 
@@ -42,15 +38,22 @@ namespace ResourcesServer
 
             // Web API routes
             config.MapHttpAttributeRoutes(constraintResolver);
-
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            config.AddApiVersioning(o =>
+            {
+                o.DefaultApiVersion = new ApiVersion(1, 0);
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.ApiVersionReader = new MediaTypeApiVersionReader();
+            });
+
             //Swagger Register
             //SwaggerConfig.Register();
         }
+
     }
 }

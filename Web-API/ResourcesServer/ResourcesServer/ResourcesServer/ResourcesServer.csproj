@@ -73,8 +73,8 @@
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AspNet.WebApi.Versioning, Version=2.0.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Versioning.2.0.3\lib\net45\Microsoft.AspNet.WebApi.Versioning.dll</HintPath>
+    <Reference Include="Microsoft.AspNet.WebApi.Versioning, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Versioning.2.1.0-beta1\lib\net45\Microsoft.AspNet.WebApi.Versioning.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -247,7 +247,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\Employees\EmployeesBaseController.cs" />
+    <Compile Include="Controllers\Employees\v2\EmployeesV2Controller.cs" />
+    <Compile Include="Controllers\Employees\v1\EmployeesV1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\AssignOAuth2SecurityRequirements.cs" />
     <Compile Include="Filters\MultipleOperationsWithSameVerbFilter.cs" />

@@ -1,11 +1,12 @@
 using System.Web.Http;
 using WebActivatorEx;
-using ResourcesServer;
 using Swashbuckle.Application;
-using System;
-using System.Xml.XPath;
+using Microsoft.Web.Http;
+using Swashbuckle.Swagger;
+using System.Linq;
+using ResourcesServer;
+using System.Web.Http.Description;
 using ResourcesServer.Filters;
-using ResourcesServer.Helpers;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -17,89 +18,109 @@ namespace ResourcesServer
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
 
-
-
-
-            GlobalConfiguration.Configuration                
-                .EnableSwagger("docs/{apiVersion}/swagger", c =>
+            GlobalConfiguration.Configuration
+                 .EnableSwagger("docs/{apiVersion}/help",c =>
                     {
-                        // By default, the service root url is inferred from the request used to access the docs.
-                        // However, there may be situations (e.g. proxy and load-balanced environments) where this does not
-                        // resolve correctly. You can workaround this by providing your own code to determine the root URL.
-                        //
-                        //  c.RootUrl(req => GetRootUrl());
-
-                        // If schemes are not explicitly provided in a Swagger 2.0 document, then the scheme used to access
-                        // the docs is taken as the default. If your API supports multiple schemes and you want to be explicit
-                        // about them, you can use the "Schemes" option as shown below.
-                        //
-                        //c.Schemes(new[] { "http", "https" });
-
-                        // Use "SingleApiVersion" to describe a single version API. Swagger 2.0 includes an "Info" object to
-                        // hold additional metadata for an API. Version and title are required but you can also provide
-                        // additional fields by chaining methods off SingleApiVersion.
-                        //
-                        c.SingleApiVersion("v1", "Resources Server");
+                        //OLD IMPLEMENTATIONS
                         c.OperationFilter<MultipleOperationsWithSameVerbFilter>();
+                        c.GroupActionsBy(GroupByControllerName);
                         c.IncludeXmlComments(GetXmlCommentsPath());
-                        // If your API has multiple versions, use "MultipleApiVersions" instead of "SingleApiVersion".
-                        // In this case, you must provide a lambda that tells Swashbuckle which actions should be
-                        // included in the docs for a given API version. Like "SingleApiVersion", each call to "Version"
-                        // returns an "Info" builder so you can provide additional metadata per API version.
-                        //
-                        //c.MultipleApiVersions(
-                        //    (apiDesc, targetApiVersion) => ResolveVersionSupportByRouteConstraint(apiDesc, targetApiVersion),
-                        //    (vc) =>
-                        //    {
-                        //        vc.Version("v2", "Resources Server API V2");
-                        //        vc.Version("v1", "Resources Server API V1");
-                        //    });
+                        c.OperationFilter<RemoveControllerNameInOperationIdFilter>();
 
+                        //////
+                        c.MultipleApiVersions(
+                            (apiDesc, version) =>
+                            {
+                                // get the versions specified by the controller
+                                var controllerVersions = apiDesc.GetControllerAndActionAttributes<ApiVersionAttribute>()
+                                    .SelectMany(attr => attr.Versions); ;
+                                // get the versions specified by the action. these take precedence
+                                var actionVersions = apiDesc.GetControllerAndActionAttributes<MapToApiVersionAttribute>()
+                                    .SelectMany(attr => attr.Versions);
 
-                        //c.OAuth2("oauth2")
-                        //    .Description("Oauth2 implicit grant")
-                        //    .Flow("implicit")
-                        //    .AuthorizationUrl(AuthenticationServerEnvironmentHelper.GetAuthenticationURI(null))
-                        //    //.tokenurl("https://tempuri.org/token")
-                        //    .Scopes(scopes =>
-                        //    {
-                        //        scopes.Add("UsuarioSwagger", "Granted User to Swagger Documentation");
-                        //        //scopes.add("write", "write access to protected resources");
-                        //    });
+                                version = version.Replace("_", ".");
 
+                                // if there are any action versions that match the current swagger version, use them
+                                if (actionVersions.Any())
+                                {
+                                    return actionVersions.Any(v => $"v{v.ToString()}" == version);
+                                }
 
-
-                        //c.OperationFilter<AssignOAuth2SecurityRequirements>();
+                                // else use any controller versions that match
+                                return controllerVersions.Any(v => $"v{v.ToString()}" == version);
+                            },
+                            (vc) =>
+                            {
+                                vc.Version("v1.0", "API v1.0");
+                                vc.Version("v2.0", "API v2.0");
+                            });
+                        c.DocumentFilter<VersionHeaderDocumentFilter>();
                     })
-                .EnableSwaggerUi("documentation/ui/{*assetPath}",c =>
+                .EnableSwaggerUi("documentation/ui/{*assetPath}", c =>
                     {
-                        
-                        // If your API supports the OAuth2 Implicit flow, and you've described it correctly, according to
-                        // the Swagger 2.0 specification, you can enable UI support as shown below.
-                        //
-                        c.EnableOAuth2Support("UsuarioSwagger", "samplerealm", "Swagger UI");
-                        //c.EnableOAuth2Support(
-                        //    clientId: "test-client-id",
-                        //    clientSecret: null,
-                        //    realm: "test-realm",
-                        //    appName: "Swagger UI"
-                        //    //additionalQueryStringParams: new Dictionary<string, string>() { { "foo", "bar" } }
-                        //);
-                        
+
+                        //OLD IMPLEMENTATIONS
+                        c.DocExpansion(DocExpansion.List);
+                        //////
+
+                        c.EnableDiscoveryUrlSelector();
                     });
-        }
-
-        private static string GetRootUrl()
-        {
-            var request = System.Web.HttpContext.Current.Request;
-            var rootURL = request.Url.GetLeftPart(UriPartial.Authority) + request.ApplicationPath + "help/doc";
-            return rootURL;
-
         }
 
         protected static string GetXmlCommentsPath()
         {
             return System.String.Format(@"{0}\bin\Swagger.XML", System.AppDomain.CurrentDomain.BaseDirectory);
+        }
+
+        private static string GroupByControllerName(ApiDescription desc)
+        {
+            return desc.ActionDescriptor.ControllerDescriptor.ControllerName.Contains("_") ? desc.ActionDescriptor.ControllerDescriptor.ControllerName.Split('_').First() : desc.ActionDescriptor.ControllerDescriptor.ControllerName;
+        }
+    }
+    public class VersionHeaderDocumentFilter : IDocumentFilter
+    {
+        public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+        {
+            // get the version that this swagger doc represents
+            var currentVersion = swaggerDoc.info.version.Replace("v", "").Replace("_", ".");
+            // iterate through all the paths in the swagger doc
+            foreach (var path in swaggerDoc.paths.Values)
+            {
+                // for every action on that path, add the version to the media type
+                UpdateOperationVersionInfo(apiExplorer, currentVersion, path.get);
+                UpdateOperationVersionInfo(apiExplorer, currentVersion, path.post);
+                UpdateOperationVersionInfo(apiExplorer, currentVersion, path.head);
+                UpdateOperationVersionInfo(apiExplorer, currentVersion, path.options);
+                UpdateOperationVersionInfo(apiExplorer, currentVersion, path.put);
+                UpdateOperationVersionInfo(apiExplorer, currentVersion, path.delete);
+                UpdateOperationVersionInfo(apiExplorer, currentVersion, path.patch);
+            }
+        }
+
+        private static void UpdateOperationVersionInfo(IApiExplorer apiExplorer,
+            string currentVersion,
+            Operation operation)
+        {
+            if (operation != null)
+            {
+                var currentVersionMediaType = $"v={currentVersion}";
+                var apiDesc = apiExplorer.ApiDescriptions
+                    .FirstOrDefault(a => operation.operationId.StartsWith($"{a.ActionDescriptor.ControllerDescriptor.ControllerName}_{a.ActionDescriptor.ActionName}"));
+                var version = apiDesc?.GetControllerAndActionAttributes<ApiVersionAttribute>()
+                    .FirstOrDefault(attr => attr.Versions.Select(v => v.ToString()).Contains(currentVersion));
+                operation.deprecated = version?.Deprecated ?? false;
+                operation.produces = operation.produces.Select(p => $"{p};{currentVersionMediaType}").ToList();
+            }
+        }
+    }
+    public class RemoveControllerNameInOperationIdFilter : IOperationFilter
+    {
+        public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+        {
+            if (!string.IsNullOrEmpty(operation.operationId))
+            {
+                operation.operationId = operation.operationId.Split('_').Last();
+            }
         }
     }
 }
