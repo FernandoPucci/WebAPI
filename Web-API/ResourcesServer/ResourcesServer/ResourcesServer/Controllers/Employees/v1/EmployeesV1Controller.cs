@@ -1,8 +1,6 @@
 ﻿using Microsoft.Web.Http;
 using ResourcesServer.Helpers;
 using ResourcesServer.Models;
-using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -39,7 +37,7 @@ namespace ResourcesServer.Controllers.Employees
         [ResponseType(typeof(IQueryable<Employee>))]
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
-
+            #region Authorization Validation
             var identity = User.Identity as ClaimsIdentity;
 
             if (!AuthenticationHelper.GetAdministratorPermission(identity, "GET " + CONTROLLER_V1))
@@ -47,6 +45,7 @@ namespace ResourcesServer.Controllers.Employees
                 //Allow all users
                 //return request.CreateResponse(HttpStatusCode.Unauthorized, "Necessária Permissão de Administrator.");
             };
+            #endregion
 
             var employees = db.Employees.AsQueryable();
 
@@ -71,6 +70,8 @@ namespace ResourcesServer.Controllers.Employees
         {
             IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
 
+            #region Authorization Validation (Throwing new Exception)
+
             var identity = User.Identity as ClaimsIdentity;
             //ahother way, throwing an Exception
             if (!AuthenticationHelper.GetAdministratorPermission(identity, "GET{key} " + CONTROLLER_V1))
@@ -79,11 +80,14 @@ namespace ResourcesServer.Controllers.Employees
                 //throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "Necessária Permissão de Administrator." });
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
             };
+            #endregion
 
+            #region Content Status Validation
             if (result == null || result.Count() == 0)
             {
                 return request.CreateResponse(HttpStatusCode.NoContent);
             }
+            #endregion
 
             return request.CreateResponse(HttpStatusCode.OK, result.FirstOrDefault());
         }
@@ -102,11 +106,14 @@ namespace ResourcesServer.Controllers.Employees
         public async Task<IHttpActionResult> Post(Employee employee)
         {
 
+            #region ModelState Validation
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            #endregion
 
+            #region Authorization Validation (Throwing new Exception)
             var identity = User.Identity as ClaimsIdentity;
 
             //ahother way, throwing an Exception
@@ -116,6 +123,7 @@ namespace ResourcesServer.Controllers.Employees
                 //throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "Necessária Permissão de Administrator." });
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
             };
+            #endregion
 
             db.Employees.Add(employee);
             await db.SaveChangesAsync();

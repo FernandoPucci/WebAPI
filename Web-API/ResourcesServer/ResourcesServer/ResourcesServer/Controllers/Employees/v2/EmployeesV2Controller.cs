@@ -1,12 +1,10 @@
 ﻿using Microsoft.Web.Http;
 using ResourcesServer.Helpers;
 using ResourcesServer.Models;
-using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 
@@ -32,7 +30,7 @@ namespace ResourcesServer.Controllers.Employees
         [ResponseType(typeof(SingleResult<Employee>))]
         public HttpResponseMessage GetV2(HttpRequestMessage request, int key) //Rename the method
         {
-
+            #region Authorization Validation (Throwing new Exception)
             var identity = User.Identity as ClaimsIdentity;
             //ahother way, throwing an Exception
             if (!AuthenticationHelper.GetAdministratorPermission(identity, "GET{key} " + CONTROLLER_V2))
@@ -41,13 +39,16 @@ namespace ResourcesServer.Controllers.Employees
                 //throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "Necessária Permissão de Administrator." });
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
             };
+            #endregion
 
+            #region Content Status Validation
             IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
 
             if (result == null || result.Count() == 0)
             {
                 return request.CreateResponse(HttpStatusCode.NoContent);
             }
+            #endregion
 
             return request.CreateResponse(HttpStatusCode.OK, SingleResult.Create(result)); //difference between both methods,
                                                                                            //only is the type of return 

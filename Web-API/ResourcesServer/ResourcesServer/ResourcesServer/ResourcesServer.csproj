@@ -253,7 +253,8 @@
     <Compile Include="Controllers\Health\HealthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserAccesses\UserAccessesBaseController.cs" />
-    <Compile Include="Controllers\UserAccesses\v1\UserAccessesController.cs" />
+    <Compile Include="Controllers\UserAccesses\v1\UserAccessesV1Controller.cs" />
+    <Compile Include="Controllers\UserAccesses\v2\UserAccessesV2Controller.cs" />
     <Compile Include="Filters\AssignOAuth2SecurityRequirements.cs" />
     <Compile Include="Filters\MultipleOperationsWithSameVerbFilter.cs" />
     <Compile Include="Global.asax.cs">
@@ -265,6 +266,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\PagedResult.cs" />
     <Compile Include="Models\UserAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -332,6 +334,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Health\" />
+    <Folder Include="Views\UserAccessesV2\" />
     <Folder Include="Views\UserAccesses\" />
     <Folder Include="Views\UserAcessesBase\" />
   </ItemGroup>

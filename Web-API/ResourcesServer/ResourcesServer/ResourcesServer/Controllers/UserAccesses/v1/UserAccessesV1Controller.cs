@@ -1,5 +1,7 @@
 ﻿using Microsoft.Web.Http;
 using ResourcesServer.Helpers;
+using ResourcesServer.Models;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -16,11 +18,15 @@ namespace ResourcesServer.Controllers.UserAccess
     [Authorize]
     [ApiVersion("1.0")]
     [RoutePrefix("api/v{version:apiVersion}/UserAccesses")]
-    public class UserAccessesController : UserAccessesBaseController
+    public partial class UserAccessesController : UserAccessesBaseController
     {
 
         #region Constants
+
         private const string CONTROLLER_V1 = "UserAccesses V1";
+
+        private const string CONTROLLER_V2 = "UserAccesses V2";
+
         #endregion
 
         #region Default Verbs
@@ -33,20 +39,22 @@ namespace ResourcesServer.Controllers.UserAccess
         /// <param name="_limit">Maximum results per page</param>
         /// <returns></returns>
         [HttpGet]
-        [Route]
+        [Route, MapToApiVersion("1.0")]
         [ResponseType(typeof(IQueryable<Models.UserAccess>))]
-        public HttpResponseMessage Get(HttpRequestMessage request, int _offset = 0, int _limit = 5)
+        public HttpResponseMessage GetV1(HttpRequestMessage request, int _offset = 0, int _limit = 5)
         {
-
+            #region Authorization Validation
             var identity = User.Identity as ClaimsIdentity;
 
             if (!AuthenticationHelper.GetAdministratorPermission(identity, "GET " + CONTROLLER_V1 + ((_offset != 0 || _limit != 5) ? " Called W/ Pagination: " + _offset + " to " + _limit : "")))
             {
                 return request.CreateResponse(HttpStatusCode.Unauthorized, "Necessária Permissão de Administrator.");
             };
+            #endregion
+
 
             var total = db.UserAccesses.Count();
-            // var userAccesses = db.UserAccesses.AsQueryable().OrderByDescending(g => g.AccessDate);
+
             var userAccesses = db.UserAccesses
                 .OrderByDescending(g => g.AccessDate)
                 .Skip(_offset)
@@ -71,6 +79,7 @@ namespace ResourcesServer.Controllers.UserAccess
 
         }
         #endregion
+
 
         public async Task LogAccess(Models.UserAccess user)
         {
