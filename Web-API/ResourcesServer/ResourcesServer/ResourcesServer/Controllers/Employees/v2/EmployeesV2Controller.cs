@@ -32,6 +32,16 @@ namespace ResourcesServer.Controllers.Employees
         [ResponseType(typeof(SingleResult<Employee>))]
         public HttpResponseMessage GetV2(HttpRequestMessage request, int key) //Rename the method
         {
+
+            var identity = User.Identity as ClaimsIdentity;
+            //ahother way, throwing an Exception
+            if (!AuthenticationHelper.GetAdministratorPermission(identity, "GET{key} " + CONTROLLER_V2))
+            {
+                //using an Exception Text
+                //throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "Necessária Permissão de Administrator." });
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            };
+
             IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
 
             if (result == null || result.Count() == 0)

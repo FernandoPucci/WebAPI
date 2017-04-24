@@ -250,7 +250,10 @@
     <Compile Include="Controllers\Employees\EmployeesBaseController.cs" />
     <Compile Include="Controllers\Employees\v2\EmployeesV2Controller.cs" />
     <Compile Include="Controllers\Employees\v1\EmployeesV1Controller.cs" />
+    <Compile Include="Controllers\Health\HealthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserAccesses\UserAccessesBaseController.cs" />
+    <Compile Include="Controllers\UserAccesses\v1\UserAccessesController.cs" />
     <Compile Include="Filters\AssignOAuth2SecurityRequirements.cs" />
     <Compile Include="Filters\MultipleOperationsWithSameVerbFilter.cs" />
     <Compile Include="Global.asax.cs">
@@ -262,6 +265,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\UserAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -327,8 +331,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\EmployeesV3\" />
-    <Folder Include="Views\Employees\" />
+    <Folder Include="Views\Health\" />
+    <Folder Include="Views\UserAccesses\" />
+    <Folder Include="Views\UserAcessesBase\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

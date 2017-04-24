@@ -22,10 +22,15 @@ namespace ResourcesServer.Controllers.Employees
     public partial class EmployeesController : EmployeesBaseController
     {
 
+        #region Constants
+        private const string CONTROLLER_V1 = "Employees V1";
+        private const string CONTROLLER_V2 = "Employees V2";
+        #endregion
+
         #region Default Verbs
 
         /// <summary>
-        /// Get a list of Employees (Need Authentication) (Only for ADMINISTRATOR roles) V1.0
+        /// Get a list of Employees (Need Authentication)  V1.0
         /// </summary>
         /// <param name="request"></param>
         /// <returns>A list o Empoyees</returns>
@@ -37,12 +42,19 @@ namespace ResourcesServer.Controllers.Employees
 
             var identity = User.Identity as ClaimsIdentity;
 
-            if (!AuthenticationHelper.GetAdministratorPermission(identity))
+            if (!AuthenticationHelper.GetAdministratorPermission(identity, "GET " + CONTROLLER_V1))
             {
-                return request.CreateResponse(HttpStatusCode.Unauthorized, "Necessária Permissão de Administrator.");
+                //Allow all users
+                //return request.CreateResponse(HttpStatusCode.Unauthorized, "Necessária Permissão de Administrator.");
             };
 
-            return request.CreateResponse(HttpStatusCode.OK, db.Employees.AsQueryable());
+            var employees = db.Employees.AsQueryable();
+
+            if (employees.Count() == 0) {
+                return request.CreateResponse(HttpStatusCode.NoContent);
+            }
+
+            return request.CreateResponse(HttpStatusCode.OK, employees);
 
         }
 
@@ -58,6 +70,15 @@ namespace ResourcesServer.Controllers.Employees
         public HttpResponseMessage GetV1(HttpRequestMessage request, int key)
         {
             IQueryable<Employee> result = db.Employees.Where(p => p.EmpNo == key);
+
+            var identity = User.Identity as ClaimsIdentity;
+            //ahother way, throwing an Exception
+            if (!AuthenticationHelper.GetAdministratorPermission(identity, "GET{key} " + CONTROLLER_V1))
+            {
+                //using an Exception Text
+                //throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "Necessária Permissão de Administrator." });
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            };
 
             if (result == null || result.Count() == 0)
             {
@@ -89,7 +110,7 @@ namespace ResourcesServer.Controllers.Employees
             var identity = User.Identity as ClaimsIdentity;
 
             //ahother way, throwing an Exception
-            if (!AuthenticationHelper.GetAdministratorPermission(identity))
+            if (!AuthenticationHelper.GetAdministratorPermission(identity, "POST " + CONTROLLER_V1))
             {
                 //using an Exception Text
                 //throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Unauthorized) { ReasonPhrase = "Necessária Permissão de Administrator." });
