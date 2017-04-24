@@ -12,6 +12,11 @@ namespace ResourcesServer.Controllers.Health
     public class HealthController : ApiController
 
     {
+        /// <summary>
+        /// System Health Check
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route]
         [ResponseType(typeof(string))]
