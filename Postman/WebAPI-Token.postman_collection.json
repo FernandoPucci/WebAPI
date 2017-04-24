@@ -10,7 +10,7 @@
 		{
 			"name": "http://localhost:10231/TOKEN",
 			"request": {
-				"url": "http://localhost:10231/Token",
+				"url": "http://localhost:12206/Token",
 				"method": "POST",
 				"header": [
 					{
@@ -24,7 +24,7 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "leticia.grotto@consinco.com.br",
+							"value": "lucas.ramos@consinco.com.br",
 							"type": "text",
 							"enabled": true
 						},
@@ -267,13 +267,13 @@
 					"urlencoded": [
 						{
 							"key": "refresh_token",
-							"value": "034266e6-f8a7-4fa8-9531-945627c2ca72",
+							"value": "22ec5108-769a-4b34-8a06-733f4081cd90",
 							"type": "text",
 							"enabled": true
 						},
 						{
 							"key": "client_id",
-							"value": "fernando.pucci@consinco.com.br",
+							"value": "leticia.grotto@consinco.com.br",
 							"type": "text",
 							"enabled": true
 						},
@@ -303,7 +303,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"Username\":\"leticia.grotto@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
+					"raw": "{\n\"Username\":\"fernando.pucci@consinco.com.br\",\n\"Password\":\"123456Test&\"\n}"
 				},
 				"description": ""
 			},
@@ -377,12 +377,12 @@
 		{
 			"name": "GET LIST EMPLOYEES by id 21612",
 			"request": {
-				"url": "http://localhost:21612/api/v1/Employees/1",
+				"url": "http://localhost:21612/api/v3/Employees/4",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer HjpqBptw_iJiE3OFPQbXnYMN7J_-J38uNttGQJ2D-hzu3wMD0d2_UWYlEWE4cA2c8UmiDrkKu31rxUf1_Z-z_qeQeN91R5YaoXxSoFNs1pCkipwk4LNKlWw48MCxYQqVsKnSb7hKOGyi0zEdF90GB6qtjyMIzQlGJc-fCV_47zM86iuur8S29yj1-CPMuNMhodBu1EXM217w9ysDjU0yKc2KRk5Li_kAI05NzW0T_-dGTCmDFWxOM8is82kiLF_tJGdqjLzIsHYQUpbWvWKoeegKyXx2hUCmTnQ5iH2BkEi8qb8kpqOxMGx9qkUE8oAsfF1UOjaxhjVXhvzJqra34CsD94en-wgN6r2qooFaJ99pjRqe16MhImCegKk26jf6fN0zIZZN4F_o5ITjEUp0HRqJwSjRRqA7IwBm4SzlTMoBANJjoWXIjdNUrC4ubbF--w3Tmpe6o2k25T00TJRLcmyAQNERnPGLJZXcyP79ZlS-pPLW2QC8Y3GZtDCjnNoXtjOszorUaBJaf6sbSBWvn0lM-5igoVh_Lm3tgQSIHbfD8pVUzQPp6XH1MIVKgicb-DcseqJToGhBLd9EcFQvhtWuRkwFgVduvV7PNn8vbIY",
+						"value": "Bearer C0U8fhjW9L0kuFzKB5S3AkdsonxhCIzw5YY3XexO9pr5irauPCpLBUZRadzuph1IFjhtq4A71ov2nCDXbeCRgcftOQ9I90SGZqN6R0tWdcaymL9FCd6FAjDYLwqFdjtZq5p5nhi6JORVWVakkgtD0jBZ-jyRK_XltiXtPVKoYBp7MjPzTrDPZNaZnlplKI-6_kPuhVhKekqtrAdSfxOICI--V5ZYW9iDM7UaLd4TZLMwwDnHnXdNENw2HChfYSdLr82akC_tsqYTk2vLDb-KkPMoxfFL0-woCTp6UW03GM5n7_JSq4cH7L6JGjQxYytLNDZf5aTM-O_HXMubd1eHQCmQRx9rGh-VVwkRMnIbDXg9aeMSMvG8PK7Vc3VsdX3BUyJyrd5oeEV4TZ58VUEYEAl12kcxRZWgh9wFTNtqZ9Fsdi6K9K76vw0AZadSDY-zh_cLyalqg3A3iK5UoIFDPx-UoiecXJnlzAuHkwXRUzzjCJ8yX10p7gpnQLhlPdZaBxGPnEE_y79cUqv6dpZP4nRs6HEldP66rVFNC8Slv9I38sWf4S681Ts8Fe75OVFBoFNa0v1ifu4kmEq56OTBtk8JM9GrX69fTzClyxrghtE",
 						"description": ""
 					}
 				],
@@ -469,6 +469,40 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{ \"EmpNo\" = 101, \"EmpName\" = \"TS\", \"Salary\" = 12000, \"DeptName\" = \"IT\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:12206/token (refresh_token)",
+			"request": {
+				"url": "http://localhost:12206/token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "//Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "refresh_token",
+							"value": "7f5f78cf-7c42-4f64-9487-a522a359b787",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text",
+							"enabled": true
+						}
+					]
 				},
 				"description": ""
 			},
