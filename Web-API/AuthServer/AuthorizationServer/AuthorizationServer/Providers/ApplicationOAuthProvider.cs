@@ -26,6 +26,7 @@ namespace AuthorizationServer.Providers
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
@@ -41,19 +42,14 @@ namespace AuthorizationServer.Providers
             ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
                 CookieAuthenticationDefaults.AuthenticationType);
 
+            #region Add Claims
 
-
-            //Adding Claim to recover into Resource Server          
+            //Adding Claim to be recovered into Resource Server          
             oAuthIdentity.AddClaim(new Claim("userName", user.UserName));
             oAuthIdentity.AddClaim(new Claim("name", user.Name));
             oAuthIdentity.AddClaim(new Claim("permissionRole", user.PermissionRole));
             oAuthIdentity.AddClaim(new Claim("creationDate", user.CreationDate.ToString()));
-
-            //cookiesIdentity.AddClaim(new Claim("userName", user.UserName));
-            //cookiesIdentity.AddClaim(new Claim("name", user.Name));
-            //cookiesIdentity.AddClaim(new Claim("permissionRole", user.PermissionRole));
-            //cookiesIdentity.AddClaim(new Claim("creationDate", user.CreationDate.ToString()));
-
+            #endregion
 
             AuthenticationProperties properties = CreateProperties(user.UserName
                                                                     , user.Name
