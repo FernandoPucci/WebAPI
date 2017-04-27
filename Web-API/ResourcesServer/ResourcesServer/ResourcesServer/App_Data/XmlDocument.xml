@@ -530,28 +530,31 @@
         </member>
         <member name="M:ResourcesServer.Controllers.Employees.EmployeesController.Put(System.Net.Http.HttpRequestMessage,System.Int32,System.String)">
             <summary>
-            Update an attribute of an Employee V1.0
+            Update an attribute of an Employee V1.0 - Method not implemented yet
             </summary>
             <param name="request">Request Data Paramater</param>
             <param name="key">Identifier Parameter</param>
             <param name="value">Attribute</param>
-            <returns></returns>
+            <responsecode>405 - Not Allowed</responsecode>
+            <returns>Not Allowed - Method not implemented yet</returns>
         </member>
         <member name="M:ResourcesServer.Controllers.Employees.EmployeesController.Delete(System.Net.Http.HttpRequestMessage,System.Int32)">
             <summary>
-            Remove a Employee from Database V1.0
+            Remove a Employee from Database V1.0 - Method not implemented yet
             </summary>
             <param name="request">Request Data Paramater</param>
             <param name="key">Identifier Parameter</param>
-            <returns></returns>
+            <responsecode>405 - Not Allowed</responsecode>
+            <returns>Not Allowed - Method not implemented yet</returns>
         </member>
         <member name="M:ResourcesServer.Controllers.Employees.EmployeesController.Patch(System.Net.Http.HttpRequestMessage,System.Int32)">
             <summary>
-            Update/Overwrite a Employee V1.0
+            Update/Overwrite a Employee V1.0 - Method not implemented yet
             </summary>
             <param name="request">Request Data Paramater</param>
             <param name="key">Identifier Parameter</param>
-            <returns></returns>
+            <responsecode>405 - Not Allowed</responsecode>
+            <returns>Not Allowed - Method not implemented yet</returns>
         </member>
         <member name="T:ResourcesServer.Controllers.Health.HealthController">
             <summary>
@@ -574,9 +577,21 @@
             <summary>
             UserAccessesController v2.0
             </summary>
+            <summary>
+            UserAccessesController v3.0 - Page data on Response Header 
+            </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "M:ResourcesServer.Controllers.UserAccess.UserAccessesController.GetV1(System.Net.Http.HttpRequestMessage,System.Int32,System.Int32)" -->
         <member name="M:ResourcesServer.Controllers.UserAccess.UserAccessesController.GetV2(System.Net.Http.HttpRequestMessage,System.Int32,System.Int32)">
+            <summary>
+            UserAccesses returned with Paged Results (Need Authentication) (Only for ADMINISTRATOR roles) V2.0
+            </summary>
+            <param name="request">Request Data Paramater</param>
+            <param name="_pageNo">Page</param>
+            <param name="_pageSize">Registers Per Page</param>
+            <returns>Paged Results of UserAccesses</returns>
+        </member>
+        <member name="M:ResourcesServer.Controllers.UserAccess.UserAccessesController.GetV3(System.Net.Http.HttpRequestMessage,System.Int32,System.Int32)">
             <summary>
             UserAccesses returned with Paged Results (Need Authentication) (Only for ADMINISTRATOR roles) V2.0
             </summary>
