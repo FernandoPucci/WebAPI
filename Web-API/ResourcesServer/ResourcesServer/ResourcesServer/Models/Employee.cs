@@ -10,7 +10,7 @@ namespace ResourcesServer.Models
     {
         /// <summary>
         /// Emp Number - Identifier Attribute
-        /// </summary>
+        /// </summary>        
         [Key]
         public int EmpNo { get; set; }
         /// <summary>

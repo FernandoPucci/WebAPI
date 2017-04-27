@@ -30,7 +30,7 @@ namespace ResourcesServer.Controllers.Employees
         /// <summary>
         /// Get a list of Employees (Need Authentication)  V1.0
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="request">Request Data Paramater</param>
         /// <returns>A list o Empoyees</returns>
         [HttpGet]
         [Route]
@@ -60,7 +60,7 @@ namespace ResourcesServer.Controllers.Employees
         /// <summary>
         /// Get a Employee that correspond to a Key (Need Authentication) V1.0
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="request">Request Data Paramater</param>
         /// <param name="key">Identifier Parameter</param>
         /// <returns>Employee Object</returns>
         [HttpGet]
@@ -138,7 +138,7 @@ namespace ResourcesServer.Controllers.Employees
         /// <summary>
         /// Update an attribute of an Employee V1.0
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="request">Request Data Paramater</param>
         /// <param name="key">Identifier Parameter</param>
         /// <param name="value">Attribute</param>
         /// <returns></returns>
@@ -152,7 +152,7 @@ namespace ResourcesServer.Controllers.Employees
         /// <summary>
         /// Remove a Employee from Database V1.0
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="request">Request Data Paramater</param>
         /// <param name="key">Identifier Parameter</param>
         /// <returns></returns>
         [HttpDelete]
@@ -166,7 +166,7 @@ namespace ResourcesServer.Controllers.Employees
         /// <summary>
         /// Update/Overwrite a Employee V1.0
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="request">Request Data Paramater</param>
         /// <param name="key">Identifier Parameter</param>
         /// <returns></returns>
         [HttpPatch]

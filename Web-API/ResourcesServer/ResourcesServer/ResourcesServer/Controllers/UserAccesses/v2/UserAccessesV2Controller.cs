@@ -25,7 +25,7 @@ namespace ResourcesServer.Controllers.UserAccess
         /// <summary>
         /// UserAccesses returned with Paged Results (Need Authentication) (Only for ADMINISTRATOR roles) V2.0
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="request">Request Data Paramater</param>
         /// <param name="_pageNo">Page</param>
         /// <param name="_pageSize">Registers Per Page</param>
         /// <returns>Paged Results of UserAccesses</returns>

@@ -34,10 +34,10 @@ namespace ResourcesServer.Controllers.UserAccess
         /// <summary>
         /// <summary> Get a list of All UserAccesses (Need Authentication) (Only for ADMINISTRATOR roles) V1.0
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="request">Request Data Paramater</param>
         /// <param name="_offset">Initial offset</param>
         /// <param name="_limit">Maximum results per page</param>
-        /// <returns></returns>
+        /// <returns>List of UserAccesses, in descending order and with offset and limit</returns>
         [HttpGet]
         [Route, MapToApiVersion("1.0")]
         [ResponseType(typeof(IQueryable<Models.UserAccess>))]
