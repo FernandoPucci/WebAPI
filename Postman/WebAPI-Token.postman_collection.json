@@ -47,6 +47,51 @@
 			"response": []
 		},
 		{
+			"name": "http://localhost:21612/api/v1/UserAccesses",
+			"request": {
+				"url": "http://localhost:21612/api/v1/UserAccesses",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:21612/api/v3/UserAccesses",
+			"request": {
+				"url": "http://localhost:21612/api/v3/UserAccesses?_pageNo=1&_pageSize=10",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer FtoJVjQqrR6M00Y7hnEtj8t1PnmzGoKWlqgPIBIETiWpxealQwCA8OgRmvMrNoz7cs45rNNaV5p4IPFswW-GbaIimApkmTDPEIiJCar1E_JgVqn_xbokD34zSCKH4j_FL1QqNdD0Kw5v-G1U2m7BrjLcobPvmVAEEAjBJ5CX41Oejxn6zUZGCLAvR8Tjvlz3w7Ch_dvowwzclT5TPv7Pc3g8z8d3GyaJKLk-BtsGMrT15wlY2OaeYQ_3-if_OqTRJ9_8tiATPILLSTdjwcZLl5m_DKeV-QH7Xo8tCq8QbdaSEiQUsH6ESjbApkvkvQrBXaHz_sZ6D_MLrtrqzvfwDudDzN_zI4J2yoVxFUD7D8bxqM1rwerSUiAC0bOcdsg3RUMloy8oVfwVuyWQX4N-sqofcagtvrykFHeFKT1ZhpNE7zyJYffVNYmQubqKT2WXG7EZ7zYjyXMIGlVUnLtoNh5BemjOeo8aqxmaK6EzI9JMsy8T5cdPEKrBJUmJsn45p19irs02HYtOJUGxaPqt5nmd_Z1gVTE5giaojwT1KODP2LIn0RUtTzsq0_uogmbMVKcpQmM9RXTge3deeMgBq1vrsce6agJ_gfZetUnHt3tBfCX6wLMnOnmjTHDGxnqR",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:21612/api/v3/UserAccesses",
+			"request": {
+				"url": "http://localhost:21612/api/v3/UserAccesses?_pageNo=1&_pageSize=10",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer FtoJVjQqrR6M00Y7hnEtj8t1PnmzGoKWlqgPIBIETiWpxealQwCA8OgRmvMrNoz7cs45rNNaV5p4IPFswW-GbaIimApkmTDPEIiJCar1E_JgVqn_xbokD34zSCKH4j_FL1QqNdD0Kw5v-G1U2m7BrjLcobPvmVAEEAjBJ5CX41Oejxn6zUZGCLAvR8Tjvlz3w7Ch_dvowwzclT5TPv7Pc3g8z8d3GyaJKLk-BtsGMrT15wlY2OaeYQ_3-if_OqTRJ9_8tiATPILLSTdjwcZLl5m_DKeV-QH7Xo8tCq8QbdaSEiQUsH6ESjbApkvkvQrBXaHz_sZ6D_MLrtrqzvfwDudDzN_zI4J2yoVxFUD7D8bxqM1rwerSUiAC0bOcdsg3RUMloy8oVfwVuyWQX4N-sqofcagtvrykFHeFKT1ZhpNE7zyJYffVNYmQubqKT2WXG7EZ7zYjyXMIGlVUnLtoNh5BemjOeo8aqxmaK6EzI9JMsy8T5cdPEKrBJUmJsn45p19irs02HYtOJUGxaPqt5nmd_Z1gVTE5giaojwT1KODP2LIn0RUtTzsq0_uogmbMVKcpQmM9RXTge3deeMgBq1vrsce6agJ_gfZetUnHt3tBfCX6wLMnOnmjTHDGxnqR",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "http://localhost:10231 GET",
 			"request": {
 				"url": "http://localhost:10231/api/EmployeeAPI",
