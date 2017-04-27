@@ -136,12 +136,13 @@ namespace ResourcesServer.Controllers.Employees
 
         //TODO:
         /// <summary>
-        /// Update an attribute of an Employee V1.0
+        /// Update an attribute of an Employee V1.0 - Method not implemented yet
         /// </summary>
         /// <param name="request">Request Data Paramater</param>
         /// <param name="key">Identifier Parameter</param>
         /// <param name="value">Attribute</param>
-        /// <returns></returns>
+        /// <responsecode>405 - Not Allowed</responsecode>
+        /// <returns>Not Allowed - Method not implemented yet</returns>
         [HttpPut]
         [Route("{key}/{value}")]
         public HttpResponseMessage Put(HttpRequestMessage request, int key, string value)
@@ -150,11 +151,12 @@ namespace ResourcesServer.Controllers.Employees
         }
 
         /// <summary>
-        /// Remove a Employee from Database V1.0
+        /// Remove a Employee from Database V1.0 - Method not implemented yet
         /// </summary>
         /// <param name="request">Request Data Paramater</param>
         /// <param name="key">Identifier Parameter</param>
-        /// <returns></returns>
+        /// <responsecode>405 - Not Allowed</responsecode>
+        /// <returns>Not Allowed - Method not implemented yet</returns>
         [HttpDelete]
         [Route("{key}")]
         public HttpResponseMessage Delete(HttpRequestMessage request, int key)
@@ -164,11 +166,12 @@ namespace ResourcesServer.Controllers.Employees
 
 
         /// <summary>
-        /// Update/Overwrite a Employee V1.0
+        /// Update/Overwrite a Employee V1.0 - Method not implemented yet
         /// </summary>
         /// <param name="request">Request Data Paramater</param>
         /// <param name="key">Identifier Parameter</param>
-        /// <returns></returns>
+        /// <responsecode>405 - Not Allowed</responsecode>
+        /// <returns>Not Allowed - Method not implemented yet</returns>
         [HttpPatch]
         [Route("{key}")]
         public HttpResponseMessage Patch(HttpRequestMessage request, int key)

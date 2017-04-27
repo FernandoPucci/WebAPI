@@ -27,6 +27,8 @@ namespace ResourcesServer.Controllers.UserAccess
 
         private const string CONTROLLER_V2 = "UserAccesses V2";
 
+        private const string CONTROLLER_V3 = "UserAccesses V3";
+
         #endregion
 
         #region Default Verbs

@@ -255,6 +255,7 @@
     <Compile Include="Controllers\UserAccesses\UserAccessesBaseController.cs" />
     <Compile Include="Controllers\UserAccesses\v1\UserAccessesV1Controller.cs" />
     <Compile Include="Controllers\UserAccesses\v2\UserAccessesV2Controller.cs" />
+    <Compile Include="Controllers\UserAccesses\v3\UserAccessesV3Controller.cs" />
     <Compile Include="Filters\AssignOAuth2SecurityRequirements.cs" />
     <Compile Include="Filters\MultipleOperationsWithSameVerbFilter.cs" />
     <Compile Include="Global.asax.cs">
@@ -335,6 +336,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Health\" />
     <Folder Include="Views\UserAccessesV2\" />
+    <Folder Include="Views\UserAccessesV3\" />
     <Folder Include="Views\UserAccesses\" />
     <Folder Include="Views\UserAcessesBase\" />
   </ItemGroup>
