@@ -2,6 +2,7 @@
 using ResourcesServer.Controllers.UserAccess;
 using ResourcesServer.Helpers;
 using ResourcesServer.Models;
+using ResourcesServer.Utils;
 using System;
 using System.Linq;
 using System.Net;
@@ -63,10 +64,10 @@ namespace ResourcesServer.Controllers.UserAccess
             var response = Request.CreateResponse(HttpStatusCode.OK, userAccesses);
 
             // Set headers for paging
-            response.Headers.Add("X-Paging-PageNo", _pageNo.ToString());
-            response.Headers.Add("X-Paging-PageSize", _pageSize.ToString());
-            response.Headers.Add("X-Paging-PageCount", pageCount.ToString());
-            response.Headers.Add("X-Paging-TotalRecordCount", total.ToString());
+            response.Headers.Add(HeaderConstantsUtil.PAGE_NO, _pageNo.ToString());
+            response.Headers.Add(HeaderConstantsUtil.PAGE_SIZE, _pageSize.ToString());
+            response.Headers.Add(HeaderConstantsUtil.PAGE_COUNT, pageCount.ToString());
+            response.Headers.Add(HeaderConstantsUtil.PAGE_TOTAL, total.ToString());
 
             response.Headers.Reverse();
 

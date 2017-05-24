@@ -21,25 +21,26 @@ namespace ResourcesServer.Helpers
             Boolean authorize = claims.FindFirst("permissionRole").Value == ADMINISTRATOR_GRANT;
 
             #region Log Access
-           // UserAccessesController userController = new UserAccessesController();
+            // UserAccessesController userController = new UserAccessesController();
 
             UserAccess user = new UserAccess();
             user.AccessDate = DateTime.Now;
-            user.User = claims.FindFirst("name").Value;
-            user.UserName = claims.FindFirst("userName").Value;
+            user.User = claims.FindFirst("name") == null ? "N/A" : claims.FindFirst("name").Value;
+            user.UserName = claims.FindFirst("userName") == null ? "N/A" : claims.FindFirst("userName").Value;
             user.PermissionRole = claims.FindFirst("permissionRole").Value;
             user.Operation = operation;
             user.IsGranted = authorize;
-            log(user); 
-        
+            log(user);
+
             #endregion
 
             #region Debug Claims
             //only for debug purposes
-            Debug.WriteLine("++ " + claims.FindFirst("userName").Value);
-            Debug.WriteLine("++ " + claims.FindFirst("name").Value);
-            Debug.WriteLine("++ " + claims.FindFirst("permissionRole").Value);
-            Debug.WriteLine("++ " + claims.FindFirst("creationDate").Value);
+            Debug.WriteLine("++ " + claims.FindFirst("userName") == null ? "N/A" : claims.FindFirst("userName").Value);
+            Debug.WriteLine("++ " + claims.FindFirst("name") == null ? "N/A" : claims.FindFirst("name").Value);
+            Debug.WriteLine("++ " + claims.FindFirst("permissionRole") == null ? "N/A" : claims.FindFirst("permissionRole").Value);
+            Debug.WriteLine("++ " + claims.FindFirst("ge_usuario") == null ? "N/A" : claims.FindFirst("ge_usuario").Value);
+            //Debug.WriteLine("++ " + claims.FindFirst("creationDate") == null ? "N/A" : claims.FindFirst("creationDate").Value);
             #endregion
 
             return authorize;
