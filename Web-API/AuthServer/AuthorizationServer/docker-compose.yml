@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  authorizationserver:
+    image: fsilvapucci/authorizationserver
+    build:
+      context: .\AuthorizationServer
+      dockerfile: Dockerfile
