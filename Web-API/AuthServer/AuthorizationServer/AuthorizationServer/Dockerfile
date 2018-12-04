@@ -1,6 +1,6 @@
-FROM microsoft/iis:latest
+FROM microsoft/aspnet:4.7.1-windowsservercore-1709
 
-RUN powershell -NoProfile -Command Remove-Item -Recurse C:\inetpub\wwwroot\*
+WORKDIR /inetpub/wwwroot
 
 WORKDIR /inetpub/wwwroot
 
